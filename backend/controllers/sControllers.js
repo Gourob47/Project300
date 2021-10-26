@@ -1,92 +1,103 @@
 
 const Service= require("../models/serviceModel");
+const ErrorHandler = require("../utils/errorHandler");
+
+const catchAsynceError= require("../middleware/catchAsyncError");
+
 
 //create by----ADMIN
-exports.createService= async (req, res, next)=>{
-    const createService = await Service.create(req.body);
+exports.createService= catchAsynceError(async (req, res, next)=>{
+    const service = await Service.create(req.body);
 
 
-    res.status(201).json({
+    res.status(200).json({
         success: true,
-        createService
+        service
     })
-}
+});
 
 
 
 //get all service
-exports.getsControllers  = async(req,res,next)=>{
+exports.getsControllers  = catchAsynceError (async(req,res)=>{
 
-    const getService=await Service.find(req.body);
+    const service=await Service.find();
     //res.status(200).json({message:"Route is worrking fine"});
     res.status(200).json({
         success:true,
-        getService
+        service
     })
-}
+});
 
 //get one service
 
-exports.oneService= async(req,res)=>{
+exports.oneService=catchAsynceError (async(req,res,next)=>{
     
-    const oneService= await Service.findById(req.params.id);
+    const service= await Service.findById(req.params.id);
 
 
-    if(!oneService){
+    if(!service){
 
-      return res.status(200).json({
+        /*return res.status(500).json({
             success:false,
             message:"Service not found"
-        })
-    };
 
+           
+        })*/
+
+       return next(new ErrorHandler("Service Not found",404));
+
+    };
 
     res.status(200).json({
         success:true,
-        oneService
-    })
+        service
+    });
 
-}
+});
 
 
 //update by-----ADMIN
-exports.updateService= async(req,res,next)=>{
-    let upService= await Service.findById(req.params.id);
+exports.updateService=catchAsynceError (async(req,res,next)=>{
+    let service= await Service.findById(req.params.id);
 
 
-    if(!upService){
+    if(!service){
 
-      return res.status(200).json({
+      /*return res.status(500).json({
             success:false,
             message:"Service not found"
-        })
+        })*/
+        return next(new ErrorHandler("Service Not found",404));
+
     };
 
-    upService= await Service.findByIdAndUpdate(req.params.id, req.body,
+    service= await Service.findByIdAndUpdate(req.params.id, req.body,
         {new:true, runValidators:true, useFindAndModify:false});
   
         res.status(200).json({
             success:true,
-            upService
+            service
         })
 
 
-}
+});
 
 //delete by----ADMIN
-exports.deleteService= async(req,res,next)=>{
-    let delService= await Service.findById(req.params.id);
+exports.deleteService= catchAsynceError(async(req,res,next)=>{
+    const service= await Service.findById(req.params.id);
 
 
-    if(!delService){
+    if(!service){
 
-      return res.status(200).json({
+      /*return res.status(500).json({
             success:false,
             message:"Service not found"
-        })
+        })*/
+        return next(new ErrorHandler("Service Not found",404));
     };
 
-     await delService.remove();
+     await service.remove();
         
   
         res.status(200).json({
@@ -95,4 +106,4 @@ exports.deleteService= async(req,res,next)=>{
         })
 
 
-}
+});

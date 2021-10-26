@@ -1,0 +1,54 @@
+
+.Head h1{
+    text-align: center;
+    font-family:Arial, Helvetica, sans-serif ;
+    color: #2E5266FF;
+    
+}
+
+.header {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+
+    
+  }
+ 
+.header > li {
+    
+    float:right;
+    
+  }
+  
+.header >  li a {
+    display: block;
+    color:#5D001E;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+  
+
+.header > li a:hover {
+    background-color:#5D001E;
+    color: white;
+  }
+
+  
+  .line{
+      
+      margin-top : 30px;
+  }
+
+
+
+  @media screen and (max-width: 600px) {
+  .header {
+       display:none;
+   }
+   .line{
+       display: none;
+   }
+    
+  }

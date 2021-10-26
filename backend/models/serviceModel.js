@@ -1,6 +1,6 @@
 const mongoose= require("mongoose");
 
-const serviceSchema=  mongoose.Schema({
+const serviceSchema= new  mongoose.Schema({
     name:{
         type:String,
         required: true,
@@ -8,22 +8,22 @@ const serviceSchema=  mongoose.Schema({
     
       },
  
-        identity:{
+     identity:{
             type:Number,
-            required:[6,"Enter correct number"],
+            required:true
            
             
            },
 
-            email:{
-                type:String,
-                required:[true,"enter valid email"],
+     email:{
+            type:String,
+            required:true
                
             },
 
-            phone:{
+     phone:{
                 type:Number,
-                required:[11,"enter valid number"],
+                required:true
                
                
             },
@@ -38,5 +38,5 @@ const serviceSchema=  mongoose.Schema({
 
 });
 
-module.exports=  mongoose.model("Service",serviceSchema);
+module.exports= new mongoose.model("Service",serviceSchema);
 
