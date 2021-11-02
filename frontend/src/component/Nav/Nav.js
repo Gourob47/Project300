@@ -1,5 +1,6 @@
 import React, { Fragment } from "react";
 
+import { Link } from "react-router-dom";
 
 import "./Nav.css";
 
@@ -14,21 +15,19 @@ const Nav = () => {
 
         <ul className="header">
           <li>
-            <a href="#about">ABOUT</a>
+            <Link to="/contact">CONTACT</Link>
           </li>
           <li>
-            <a href="#contact">CONTACT</a>
+            <Link to="/about">ABOUT</Link>
           </li>
           <li>
-            <a href="#services">SERVICES</a>
+            <Link to="/service">SERVICES</Link>
           </li>
           <li>
-            <a className="home">HOME</a>
+            <Link to="/home">HOME</Link>
           </li>
         </ul>
       </div>
-
-   
     </Fragment>
   );
 };

@@ -8,24 +8,37 @@ const serviceSchema= new  mongoose.Schema({
     
       },
  
-     identity:{
+            identity:{
             type:Number,
             required:true
            
             
            },
 
-     email:{
-            type:String,
-            required:true
-               
+           images:[
+             {
+                 public_id:{
+                     type:String,
+                     required: true,
+                 },
+                 url:{
+                     type:String,
+                     required:true,
+                 }
+             }
+           ],
+
+       
+
+  
+            catagory:{
+                type:String,
+                required:true
             },
 
-     phone:{
+            price:{
                 type:Number,
                 required:true
-               
-               
             },
 
             createdAt:{

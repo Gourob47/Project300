@@ -3,6 +3,7 @@ const Service= require("../models/serviceModel");
 const ErrorHandler = require("../utils/errorHandler");
 
 const catchAsynceError= require("../middleware/catchAsyncError");
+const apiFeatures = require("../utils/apiFeatures");
 
 
 //create by----ADMIN
@@ -21,11 +22,17 @@ exports.createService= catchAsynceError(async (req, res, next)=>{
 //get all service
 exports.getsControllers  = catchAsynceError (async(req,res)=>{
 
-    const service=await Service.find();
+    const resultPerPage = 3;
+    const serviceCount = await Service.countDocuments();
+
+    const apiFeature= new apiFeatures(Service.find(),req.query).search().filter().pagination(resultPerPage);
+
+    const service=await apiFeature.query;
     //res.status(200).json({message:"Route is worrking fine"});
     res.status(200).json({
         success:true,
-        service
+        service,
+        serviceCount,
     })
 });
 

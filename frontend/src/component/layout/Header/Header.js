@@ -11,8 +11,9 @@ const Header = () => {
     //burgerColorHover="#ad2d24"
     logo={logo}
 
-    logowidth="20vmax"
-    navColor1="#00A4CCFF"
+    logowidth="80px"
+    logoHeight="70px"
+    navColor1="#5D001E"
     logoHoverSize="10px"
     logoHoverColor="white"
   
@@ -22,10 +23,10 @@ const Header = () => {
     link2Text="Services"
     link3Text="Contact"
     link4Text="About"
-    lingk1Url="/"
-    lingk2Url="/Services"
-    lingk3Url="/Contact"
-    lingk4Url="/About us"
+    link1Url="/"
+    link2Url="/Services"
+    link3Url="/Contact"
+    link4Url="/About us"
     link1Size="1.2vmax"
 
     nav1JustiifyContent="flex-end"
@@ -33,17 +34,20 @@ const Header = () => {
     nav3JustiifyContent="flex-start"
     nav4JustiifyContent="flex-start"
 
+    link1Color="White"
+
     link1ColorHover="white"
     link2ColorHover="white"
     link3ColorHover="white"
     link4ColorHover="white"
 
+    link3Margin=".7vmax"
     link2Margin="1.3vmax"
   
   
-    profileIconColor= "rgba(35,35,35,0.8)"
-    searchIconColor= "rgba(35,35,35,0.8)"
-    cartIconColor= "rgba(35,35,35,0.8)"
+    profileIconColor= "white"
+    searchIconColor= "white"
+    cartIconColor= "white"
     
 
     profileIconColorHover="#eb4034"

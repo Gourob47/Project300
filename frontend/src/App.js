@@ -4,7 +4,7 @@ import './App.css';
 import Header from "./component/layout/Header/Header.js";
 
 
-import {BrowserRouter as Router, Route} from"react-router-dom";
+import {BrowserRouter as Router, Route, Link} from"react-router-dom";
 
 import webfont from "webfontloader";
 import React from 'react';
@@ -16,11 +16,10 @@ import Navbar from "./component/Navbar/Navbar.js";
 
 
 
-
-
-
-
-
+import Service from "./component/Service/Service.js";
+import About from "./component/About/About.js";
+import Home from "./component/Home/home.js";
+import Contact from "./component/Contact/Contact.js";
 
 
 function App() {
@@ -38,9 +37,19 @@ function App() {
   return (
 
     <Router>
-    <Header />
+    {/*<Header/>
     <Route exact path="/" component={Nav} />
-    <Navbar/>
+    <Nav/>
+    
+
+    <Navbar/>*/}
+    <Header/>
+    <Nav/>
+    <Route exact path="/home" component={Home}/>
+    <Route exact path="/service" component={Service}/>
+    <Route exact path="/about" component={About}/>
+    <Route exact path="/Contact" component={Contact}/>
+    
 
     <Footer />
 
