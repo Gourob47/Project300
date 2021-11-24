@@ -45,10 +45,11 @@ function App() {
     <Navbar/>*/}
     <Header/>
     <Nav/>
+    <Route exact path="/" component={Home}/>
     <Route exact path="/home" component={Home}/>
     <Route exact path="/service" component={Service}/>
     <Route exact path="/about" component={About}/>
-    <Route exact path="/Contact" component={Contact}/>
+    <Route exact path="/contact" component={Contact}/>
     
 
     <Footer />

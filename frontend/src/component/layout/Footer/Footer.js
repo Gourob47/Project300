@@ -1,22 +1,22 @@
-//import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import React from "react";
 
 import "./Footer.css";
 
 
-
+import{Col} from 'react-bootstrap';
 import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
     return (
       <footer class="footer">
 
-          <div class="container">
+          <div class="container1">
 
               <div class="row">
 
-              <div class="footer-col">
+              <div class="col mt-4">
                  
                   <ul>
                       <h4  >How We Works</h4>
@@ -33,7 +33,7 @@ const Footer = () => {
                   </ul>
               </div>
 
-              <div class="footer-col">
+              <div class="col mt-4">
             
                   <ul>
                       <h4>Who We help</h4>
@@ -48,7 +48,7 @@ const Footer = () => {
                   </ul>
               </div>
 
-              <div class="footer-col">
+              <div class="col mt-4">
                  
                   <ul>
                       <h4>About US</h4>
@@ -63,7 +63,7 @@ const Footer = () => {
               </div>
 
 
-              <div class="footer-col">
+              <div class="col mt-4">
                 
              
                  <div class="social">

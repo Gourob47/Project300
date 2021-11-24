@@ -8,7 +8,11 @@ const apiFeatures = require("../utils/apiFeatures");
 
 //create by----ADMIN
 exports.createService= catchAsynceError(async (req, res, next)=>{
+    
+    req.body.user= req.user.id;
+    
     const service = await Service.create(req.body);
+
 
 
     res.status(200).json({

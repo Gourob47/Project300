@@ -1,41 +1,29 @@
-.footer{
-   margin-bottom: 0 auto;
-   padding-bottom: 0 auto;
-   box-sizing: border-box;
 
-}
 
-.container{
-    margin:auto;
-    max-width: 100%;
+.container1{
+    margin: auto;
+    width: 95%;
     background-color: #2E1114 ;
 }
+
 
 .row{
     display: flex;
     flex-wrap: wrap;
 }
-
-.container ul{
-    
+.container1 ul{
+  
     list-style: none;
 }
 
-.footer-col{
-    width: 25%;
-
-  
-
-}
-
-.footer-col h4{
+.col h4{
 
     color: blanchedalmond;
     font-family: 'Times New Roman', Times, serif;
-    position:relative ;
+    position: relative ;
 }
 
-.footer-col h4::before{
+.col h4::before{
     content: ' ';
     position: absolute;
     left:0;
@@ -46,11 +34,12 @@
     width: 80px;
 }
 
-.footer-col ul li:not(:last-child){
-    margin-bottom: 10px;
+col ul li:not(:last-child){
+    margin-bottom: 30px;
 }
 
-.footer-col ul li a{
+.col ul li a{
+    margin-top: 20px;
     font-size: 16px;
     text-transform: capitalize;
     text-decoration: none;
@@ -60,17 +49,19 @@
     color: #ffffff;
 }
 
-.footer-col ul li a:hover{
+.col ul li a:hover{
     color: blueviolet;
     padding-left: 10px;
 }
 
-.footer-col .social a{
+.col .social a{
     
     display: inline-block;
+    margin-top: 20px;
+    margin-right: 20px;
     height: 40px;
     width: 40px;
-    margin: 0 10px 10px 0;
+    
     line-height: 40px;
     background-color: rgba(255,255,255,0.2);
     color: #ffffff;
@@ -81,14 +72,14 @@
 }
 
 
-.footer-col .social a:hover{
+.col .social a:hover{
     color: #24262b;
     background-color: #ffffff;
 }
 
 @media(max-width:767px){
     .footer-col{
-        width: 50%;
+        width: 80%;
         margin-bottom: 30px;
         
     }
@@ -96,7 +87,7 @@
 
 @media(max-width:574px){
     .footer-col{
-        width: 100%;
+        width: 80%;
         margin-bottom: 30px;
         
     }

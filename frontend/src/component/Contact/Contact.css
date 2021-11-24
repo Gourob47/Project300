@@ -1,0 +1,27 @@
+.req{
+    text-align: center;
+    color: #2E1114;
+    font-style: italic;
+}
+
+
+.req1{
+    color: #2E1114;
+    font-size: 1.4rem;
+}
+.req2{
+    background-color: #2E1114;
+    color: white;
+    transition: all 0.5s ease;
+    
+}
+
+.req2:hover{
+    color:aliceblue;
+    padding-left: 10px;
+    
+}
+.border{
+    
+    border:  10px solid black;
+}

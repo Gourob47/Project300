@@ -3,17 +3,28 @@ import React, { Fragment } from "react";
 import { Link } from "react-router-dom";
 
 import "./Nav.css";
+import logo from "../../images/logo.png";
+
+import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 const Nav = () => {
   return (
     <Fragment>
-      <div>
-        <div className="Head">
-          <h1>U_Creations</h1>
-          <hr className="line" />
-        </div>
+      <div className="container">
+        <ul className="head">
+       
+           
+            
+            <Link to=""   > < img className="img"  src={logo} alt="" /></Link>
+            <Link to="" className="name">Unlocked_Creations</Link> 
+           
+           
+        </ul>
 
         <ul className="header">
+
+     
+       
           <li>
             <Link to="/contact">CONTACT</Link>
           </li>
