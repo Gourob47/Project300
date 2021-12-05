@@ -15,6 +15,11 @@ const serviceSchema= new  mongoose.Schema({
             
            },
 
+           ratings:{
+               type:Number,
+               default:0,
+           },
+
            images:[
              {
                  public_id:{
@@ -27,6 +32,34 @@ const serviceSchema= new  mongoose.Schema({
                  }
              }
            ],
+
+           reviews:[
+               {
+
+                user:{
+                    type: mongoose.Schema.ObjectId,
+                    ref: "User",
+                    required: true,
+                },
+                   name:{
+                       type:String,
+                       required: true,
+                   },
+                   rating:{
+                       type:Number,
+                       required:true,
+                   },
+                   comment:{
+                       type:String,
+                       required: true,
+                   }
+               }
+           ],
+
+           numofReviews:{
+               type:Number,
+               default:0,
+           },
 
        
 

@@ -22,6 +22,9 @@ import Home from "./component/Home/home.js";
 import Contact from "./component/Contact/Contact.js";
 
 
+import MetaData from "./component/layout/MetaData";
+
+
 function App() {
 
   React.useEffect(()=>{
@@ -36,7 +39,12 @@ function App() {
 
   return (
 
+    
+
     <Router>
+
+<MetaData title="Unlocked_Creations"/>
+    
     {/*<Header/>
     <Route exact path="/" component={Nav} />
     <Nav/>

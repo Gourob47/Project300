@@ -14,10 +14,15 @@ app.use(cookieParser());
 const service= require("./routes/sRoute");
 const user= require("./routes/userRoute");
 
+//const program= require("./routes/programRoute");
+
+const program= require("./routes/programRoute");
 
 app.use("/api/v1",service);
 
 app.use("/api/v1",user);
+
+app.use("/api/v1", program);
 
 
 //middleware for error

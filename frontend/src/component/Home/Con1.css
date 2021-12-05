@@ -1,0 +1,16 @@
+
+/*.card{
+   background-color:;
+   color:crimson;
+   width: 14vmax;
+   display: flex;
+   flex-direction: column;
+   text-decoration: none;
+   margin-bottom: 2vmax;
+}
+
+.card > div{
+    margin: 0.5vmax;
+    display: flex;
+
+}*/

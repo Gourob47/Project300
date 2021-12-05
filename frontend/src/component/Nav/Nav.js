@@ -7,9 +7,14 @@ import logo from "../../images/logo.png";
 
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
+
 const Nav = () => {
   return (
+
+    
     <Fragment>
+
+      
       <div className="container">
         <ul className="head">
        
