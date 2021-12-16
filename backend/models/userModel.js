@@ -16,7 +16,7 @@ const userSchema= new mongoose.Schema({
 
     email:{
       type:String,
-      required:[true,"please enter your mail"],
+      required:[true,"please enter your email"],
       unique:true,
       validate:[validator.isEmail,"Please enter a valid Email"]
 
@@ -32,7 +32,7 @@ const userSchema= new mongoose.Schema({
         {
             public_id:{
                 type:String,
-                required: true,
+               required: true,
             },
             url:{
                 type:String,

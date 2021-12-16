@@ -1,0 +1,24 @@
+.profileContainer{
+   
+    
+    background-color: aliceblue;
+}
+
+.profileContainer > div{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+
+}
+
+.profileContainer > div >  a{
+    padding: 10px;
+    margin: 10px;
+    text-decoration: none;
+    text-decoration: underline;      
+    font-size: 2rem;
+    color: #5D001E;
+    font: 400 2vmax "Roboto";    
+}
+

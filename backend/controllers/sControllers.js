@@ -17,27 +17,45 @@ exports.createService = catchAsynceError(async (req, res, next) => {
 });
 
 //get all service
-exports.getsControllers = catchAsynceError(async (req, res) => {
+exports.getsControllers = catchAsynceError(async (req, res,next) => {
+
+
   const resultPerPage = 10;
   const servicesCount = await Service.countDocuments();
+
 
   const apiFeature = new apiFeatures(Service.find(), req.query)
     .search()
     .filter()
-    .pagination(resultPerPage);
+   // .pagination(resultPerPage);
 
-  const services = await apiFeature.query;
+  // const services= await apiFeature.query;  
+
+  
+  let services= await apiFeature.query;
+  let filteredServiceCount= services.length;
+
+
+ // let services= await apiFeature.query;
+
+ // let filteredServiceCount= services.length;
+
+  //apiFeature.pagination(resultPerPage);
+
+  //services = await apiFeature.query;
   //res.status(200).json({message:"Route is worrking fine"});
   res.status(200).json({
     success: true,
     services,
     servicesCount,
+    resultPerPage,
+    filteredServiceCount,
   });
 });
 
 //get one service
 
-exports.oneService = catchAsynceError(async (req, res, next) => {
+exports.getOneService= catchAsynceError(async (req, res, next) => {
   const service = await Service.findById(req.params.id);
 
   if (!service) {
@@ -54,6 +72,7 @@ exports.oneService = catchAsynceError(async (req, res, next) => {
   res.status(200).json({
     success: true,
     service,
+    
   });
 });
 

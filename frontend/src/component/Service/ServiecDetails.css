@@ -1,0 +1,66 @@
+.serviceDetails{
+
+   margin: auto;
+   width: fit-content; 
+   box-sizing: border-box;
+   
+
+   
+  
+}
+
+.serve{
+    border: 2px solid #510;  
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.serve .CarouselImage{
+    width: 20vmax;
+}
+
+
+.serve > button{
+
+    background-color: #5D001E ;
+    text-transform: uppercase;
+    border: none;
+    display: inline-block;
+    padding:  1vmax;
+    color: honeydew;
+    border-radius: 10%;
+}
+
+.serve > button:hover{
+    
+        box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+      
+}
+
+
+
+.reviewCard{
+  flex: none;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   margin: 1vmax;
+   padding: 1vmax;
+   width: 30vmax;
+   border: 2px solid #5D001E;
+   border-radius: 2%;
+
+}
+
+.reviews{
+    display: flex;
+    overflow: auto;
+}
+
+.noReviews{
+    text-align: center;
+    font-size: 2rem;
+    color: #5D001E;
+}

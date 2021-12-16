@@ -1,16 +1,18 @@
 class apiFeatures{
 
-    constructor(query, querystr){
+    constructor(query, queryStr){
         this.query= query;
-        this.querystr=querystr;
+        this.queryStr=queryStr;
+
+        
     }
 
     //searching
 
     search(){
-        const keyword= this.querystr.keyword?{
+        const keyword= this.queryStr.keyword?{
             name:{
-                $regex: this.querystr.keyword,
+                $regex: this.queryStr.keyword,
                 $options:"i",
             },
         }:{};
@@ -23,7 +25,7 @@ class apiFeatures{
 
     //filteration
     filter(){
-        const queryCopy= {...this.querystr};
+        const queryCopy= {...this.queryStr};
 
        console.log(queryCopy);
 
@@ -50,7 +52,7 @@ class apiFeatures{
 
     //page for result
     pagination(resultPerPage){
-        const currentPage= Number(this.querystr.page) || 1;
+        const currentPage= Number(this.queryStr.page) || 1;
 
         const skip= resultPerPage*(currentPage-1);
         this.query= this.query.limit(resultPerPage).skip(skip);

@@ -6,6 +6,7 @@ import "./Nav.css";
 import logo from "../../images/logo.png";
 
 import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import ServiceDetails from "../Service/ServiceDetails";
 
 
 const Nav = () => {
@@ -37,13 +38,17 @@ const Nav = () => {
             <Link to="/about">ABOUT</Link>
           </li>
           <li>
-            <Link to="/service">SERVICES</Link>
+            <Link to="/services">SERVICES</Link>
           </li>
           <li>
             <Link to="/home">HOME</Link>
           </li>
+
+         
         </ul>
       </div>
+
+     
     </Fragment>
   );
 };

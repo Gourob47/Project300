@@ -24,7 +24,7 @@ const Header = () => {
     link3Text="Contact"
     link4Text="About"
     link1Url="/"
-    link2Url="/Services"
+    link2Url="/services"
     link3Url="/Contact"
     link4Url="/About us"
     link1Size="1.2vmax"
@@ -44,12 +44,13 @@ const Header = () => {
     link3Margin=".7vmax"
     link2Margin="1.3vmax"
   
+    
   
     profileIconColor= "white"
     searchIconColor= "white"
     cartIconColor= "white"
     
-
+    profileIconUrl="/login"
     profileIconColorHover="#eb4034"
     searchIconColorHover="#eb4034"
     cartIconColorHover="#eb4034"
