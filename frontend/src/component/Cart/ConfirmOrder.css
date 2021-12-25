@@ -1,0 +1,49 @@
+.ConfirmOrderPage {
+  height: 100vh;
+  text-align: center;
+ 
+ 
+  padding: 10vmax;
+  background-color: cornsilk;
+}
+
+.confirmCartItems {
+    padding: 5vmax;
+    padding-top: 2vmax;
+  }
+
+.confirmCartItems > p,
+.confirmCartItems > div {
+  font: 400 1.8vmax "Roboto";
+ 
+ 
+}
+
+.confirmCartItems > div > a{
+    text-decoration: none;
+    color: #5D001E;
+    padding: 10px;
+    margin: 0 2vmax;
+  width: 60%;
+}
+
+.name{
+   padding: 30px;
+  
+}
+
+.price{
+    font: 400 1.8vmax "Roboto";
+    padding-bottom: 20px;
+}
+.btn {
+    background-color: #5D001E;
+    color: white;
+    width: 30%;
+    padding: 1vmax;
+    border: none;
+    margin: auto;
+    cursor: pointer;
+    transition: 0.5s;
+    font: 400 2vmax "Roboto";
+  }

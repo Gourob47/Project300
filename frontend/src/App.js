@@ -37,6 +37,23 @@ import ProtectedRoute from "./component/Route/ProtectedRoute";
 
 import UserOptions from "./component/layout/Header/UserOptions.js";
 import { useSelector } from "react-redux";
+import UpdatePassword from "./component/User/UpdatePassword";
+
+
+import ForgotPassword from "./component/User/ForgotPassword";
+import ResetPassword from "./component/User/ResetPassword";
+import Cart from "./component/Cart/Cart.js";
+
+import Shipping from "./component/Cart/Shipping.js";
+import ConfirmOrder from "./component/Cart/ConfirmOrder";
+
+import OrderSuccess from "./component/Cart/OrderSuccess.js";
+
+import MyOrders from "./component/Orders/MyOrders.js";
+
+import OrderDetails from "./component/Orders/OrderDetails.js";
+
+
 
 
 
@@ -65,6 +82,9 @@ function App() {
       {/*<Header/>
     <Route exact path="/" component={Nav} />
     <Nav/>
+
+
+     
     
     <Route exact path="/service/:id" component={serviceDetails}/>
     <Navbar/>*/}
@@ -100,6 +120,30 @@ function App() {
       <ProtectedRoute exact path="/account" component={Profile}/>
 
       <ProtectedRoute exact path="/me/update" component={UpdateProfile}/>
+
+      <ProtectedRoute exact path="/password/update" component={UpdatePassword}/>
+
+      <Route exact path="/password/forgot" component={ForgotPassword }/>
+
+      <Route exact path="/password/reset/:token" component={ResetPassword } />
+
+      <Route exact path="/cart" component={Cart} />
+
+      <ProtectedRoute exact path="/order/confirm" component={ConfirmOrder}/>
+
+      <ProtectedRoute exact path="/success" component={OrderSuccess}/>
+
+      <ProtectedRoute exact path="/orders" component={MyOrders}/>
+
+     
+
+    
+     
+
+     
+  
+
+ 
 
      
      

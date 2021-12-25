@@ -11,13 +11,18 @@ import PersonIcon from "../../../../node_modules/@mui/icons-material/Person";
 import ExitToAPPIcon from "../../../../node_modules/@mui/icons-material/ExitToApp";
 import ListAltIcon from "../../../../node_modules/@mui/icons-material/ListAlt";
 
+
+import OutService from "../../../../node_modules/@mui/icons-material/NotAccessible";
+
 import { useHistory } from "react-router-dom";
 import { useAlert } from "react-alert";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../actions/userAction";
 import { color } from "@mui/system";
 
 const UserOptions = ({ user }) => {
+const {cartItems}= useSelector((state)=>state.cart);
+
   const history = useHistory();
   const alert = useAlert();
   const dispatch = useDispatch();
@@ -27,6 +32,7 @@ const UserOptions = ({ user }) => {
   const options = [
     { icon: <ListAltIcon />, name: "Orders", func: orders },
     { icon: <PersonIcon />, name: "profile", func: account },
+    { icon: <OutService style={{color: cartItems.length>0?"green":"unset"}} />, name:`Services(${cartItems.length})`, func: cart },
     { icon: <ExitToAPPIcon />, name: "Logout", func: logoutUser },
   ];
 
@@ -47,6 +53,10 @@ const UserOptions = ({ user }) => {
 
   function account() {
     history.push("/account");
+  }
+
+  function cart() {
+    history.push("/cart");
   }
 
   function logoutUser() {
@@ -78,7 +88,7 @@ const UserOptions = ({ user }) => {
             icon={item.icon}
             tooltipTitle={item.name}
             onClick={item.func}
-            //     tooltipOpen={window.innerWidth <= 600 ? true : false}
+           tooltipOpen={window.innerWidth <= 600 ? true : false}
           />
         ))}
       </SpeedDial>

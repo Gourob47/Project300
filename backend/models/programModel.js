@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 const programSchema = new mongoose.Schema({
-  programPlace: {
+  /*programPlace: {
     address: {
       type: String,
       required: true,
@@ -12,15 +12,20 @@ const programSchema = new mongoose.Schema({
       required: true,
     },
 
-    pinCode: {
+    state:{
       type: String,
       required: true,
     },
-    phoneNumber: {
+    country:{
       type: String,
       required: true,
     },
-  },
+
+    phoneNo: {
+      type: String,
+      required: true,
+    },
+  },*/
 
   package: [
     {
@@ -48,7 +53,7 @@ const programSchema = new mongoose.Schema({
     required: true,
   },
 
-  paymentInfo: {
+  /*paymentInfo: {
     id: {
       type: String,
       required: true,
@@ -74,7 +79,13 @@ const programSchema = new mongoose.Schema({
     type: Number,
     required: true,
     default: 0,
+  },*/
+  confirmProgram: {
+    type: String,
+    required: true,
+    default: " Pending",
   },
+
 
   totalCost: {
     type: Number,
@@ -82,12 +93,7 @@ const programSchema = new mongoose.Schema({
     default: 0,
   },
 
-  confirmProgram: {
-    type: String,
-    required: true,
-    default: " Pending",
-  },
-
+  
   deliveredAt: Date,
   createdAt: {
     type: Date,

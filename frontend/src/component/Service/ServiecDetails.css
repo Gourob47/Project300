@@ -24,18 +24,33 @@
 
 .serve > button{
 
+    /*
+        padding: 0.8vmax 4vmax;
+    font: 300 3vmax "Roboto";
+     margin: 1vmax 4vmax;
+     padding: 0.8vmax 4vmax;
     background-color: #5D001E ;
     text-transform: uppercase;
     border: none;
     display: inline-block;
     padding:  1vmax;
     color: honeydew;
-    border-radius: 10%;
+    border-radius: 10%;*/
+
+   
+    color: #5D001E;
+    font: 300 2vmax "Roboto";
+    border: none;
+    display: flex;
+    padding: 1vmax;
+    flex-direction: column; 
+    cursor: pointer;
 }
 
 .serve > button:hover{
     
         box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+        color: green;
       
 }
 

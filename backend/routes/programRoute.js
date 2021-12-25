@@ -9,7 +9,7 @@ const {isAuthenticationUser, authorisedRoles, isAuthentication}= require("../mid
 
 router.route("/program/new").post(isAuthentication, newProgram );
 
-router.route("/program/:id").get(isAuthentication, authorisedRoles("Admin"), getSingleProgram);
+router.route("/program/:id").get(isAuthentication, /*authorisedRoles("Admin"),*/ getSingleProgram);
 
 router.route("/programs/me").get(isAuthentication, myProgram);
 
