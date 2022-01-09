@@ -1,0 +1,57 @@
+.heading{
+    font: 400 2rem "Roboto";
+  
+    padding: 0.5vmax;
+    box-sizing: border-box;
+    transition: all 0.5s;
+    margin: 2rem;
+    text-align: center;
+   
+}
+.serviceListTable a,
+.serviceListTable button {
+    color: rgba(0, 0, 0, 0.527);
+    transition: all 0.5s;
+  }
+
+  .serviceListTable a:hover {
+    color: #5D001E;
+  }
+  
+  .serviceListTable button:hover {
+    color: #5D001E;
+  }
+
+  .serviceTableContainer{
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+      margin: 0 ;
+      padding: 2vmax;
+      height: 80vh;
+    
+      
+  }
+  .serviceListTable{
+      width: 100%;
+      background-color: whitesmoke;
+ 
+      
+  }
+
+  @media  screen and(max-width: 600px) {
+
+    .serviceTableContainer{
+      width: 100%;
+      justify-content: center;
+      text-align: center;
+      margin: 1vmax ;
+      padding: 1vmax;
+  }
+  }
+
+
+
+
+
+  

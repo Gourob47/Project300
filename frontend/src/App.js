@@ -53,6 +53,27 @@ import MyOrders from "./component/Orders/MyOrders.js";
 
 import OrderDetails from "./component/Orders/OrderDetails.js";
 
+import Dashboard from "./component/Admin/Dashboard.js";
+
+import ServiceList from "./component/Admin/ServiceList.js";
+
+import NewService from "./component/Admin/NewService.js";
+
+
+import UpdateService from "./component/Admin/UpdateService.js";
+
+import OrderList from "./component/Admin/OrderList.js";
+
+
+import ProcessOrder from "./component/Admin/ProcessOrder.js";
+
+import UserList from "./component/Admin/UserList.js";
+
+import UpdateUser from "./component/Admin/UpdateUser.js";
+
+
+import ServiceReviews from "./component/Admin/ServiceReviews.js"
+
 
 
 
@@ -75,6 +96,8 @@ function App() {
     store.dispatch(loadUser());
   }, []);
 
+  window.addEventListener("contextmenu",(e)=>e.preventDefault());
+
   return (
     <Router>
       <MetaData title="Unlocked_Creations" />
@@ -92,6 +115,7 @@ function App() {
       <Nav />
       {isAuthenticated && <UserOptions user={user}/>}
      
+
 
       <Route exact path="/" component={Home} />
       <Route exact path="/" component={Navbar} />
@@ -135,22 +159,37 @@ function App() {
 
       <ProtectedRoute exact path="/orders" component={MyOrders}/>
 
-     
 
+      <ProtectedRoute isAdmin={true} exact path="/admin/dashboard" component={Dashboard}/>
+
+      <ProtectedRoute isAdmin={true} exact path="/admin/services" component={ServiceList}/>
+
+     
+      <ProtectedRoute isAdmin={true} exact path="/admin/service" component={NewService}/>
+
+      <ProtectedRoute isAdmin={true} exact path="/admin/service/:id" component={UpdateService}/>
     
-     
+      <ProtectedRoute isAdmin={true} exact path="/admin/orders" component={OrderList}/>
 
-     
+      <ProtectedRoute isAdmin={true} exact path="/admin/order/:id" component={ProcessOrder}/>
+
+      <ProtectedRoute isAdmin={true} exact path="/admin/users" component={UserList}/>
   
-
+      <ProtectedRoute isAdmin={true} exact path="/admin/user/:id" component={UpdateUser}/>
  
 
+      <ProtectedRoute isAdmin={true} exact path="/admin/reviews" component={ServiceReviews}/>
      
      
       <Route exact path="/about" component={About} />
       <Route exact path="/contact" component={Contact} />
+       
+      
+
+      
 
       <Footer />
+    
     </Router>
   );
 }

@@ -3,11 +3,12 @@ import {createStore, combineReducers, applyMiddleware} from 'redux';
 import thunk from 'redux-thunk';
 
 import {composeWithDevTools} from 'redux-devtools-extension';
-import { newReviewReducer, serviceDetailsReducer, serviceReducer } from './reducers/serviceReducers';
-import { forgotPasswordReducer, profileReducer, userReducer } from './reducers/userReducers';
+import { adminReviewReducer, deleteReviewReducer, deleteServiceReducer, newReviewReducer, newServiceReducer, serviceDetailsReducer, serviceReducer } from './reducers/serviceReducers';
+import { allUsersReducer, forgotPasswordReducer, profileReducer, userDetailsReducer, userReducer } from './reducers/userReducers';
 import { cartReducer } from './reducers/cartReducers';
-import { myOrderReducer, newOrderReducer, orderDetailsReducer } from './reducers/orderReducers';
+import { allOrderReducer, myOrderReducer, newOrderReducer, orderDetailsReducer, updateOrderReducer } from './reducers/orderReducers';
 import { myOrders } from './actions/orderAction';
+import { getAdminService } from './actions/serviceAction';
 
 const reducer= combineReducers({
     services: serviceReducer,
@@ -20,6 +21,15 @@ const reducer= combineReducers({
      myOrder: myOrderReducer,
      orderDetails: orderDetailsReducer,
      newReview: newReviewReducer,
+     newService: newServiceReducer,
+     deleteService: deleteServiceReducer,
+     allOrders: allOrderReducer,
+     updateOrders: updateOrderReducer,
+     allUsers: allUsersReducer,
+     userDetails: userDetailsReducer,
+     allReviews: adminReviewReducer,
+     deleteReviews: deleteReviewReducer,
+
 });
 
 let initialState= {

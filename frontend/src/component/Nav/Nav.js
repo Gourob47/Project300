@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 import "./Nav.css";
 import logo from "../../images/logo.png";
 
-import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+//import "../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import ServiceDetails from "../Service/ServiceDetails";
 
 

@@ -4,8 +4,40 @@ const ErrorHandler = require("../utils/errorHandler");
 const catchAsynceError = require("../middleware/catchAsyncError");
 const apiFeatures = require("../utils/apiFeatures");
 
+const cloudinary= require("cloudinary");
+
 //create by----ADMIN
 exports.createService = catchAsynceError(async (req, res, next) => {
+  
+  let images=[];
+
+  if(typeof req.body.images==="string")
+  {
+    images.push(req.body.images);
+  }
+  else
+  {
+    images= req.body.images;
+  }
+ 
+  const imagesLink=[];
+ 
+  for(let i=0;i<images.length;i++)
+  {
+    const result= await cloudinary.v2.uploader.upload(images[i],{
+      folder:"services",
+    });
+ 
+    imagesLink.push({
+      public_id: result.public_id,
+ 
+      url: result.secure_url,
+    });
+  }
+ req.body.images= imagesLink; 
+  
+  
+  
   req.body.user = req.user.id;
 
   const service = await Service.create(req.body);
@@ -20,14 +52,14 @@ exports.createService = catchAsynceError(async (req, res, next) => {
 exports.getsControllers = catchAsynceError(async (req, res,next) => {
 
 
-  const resultPerPage = 10;
+  const resultPerPage = 20;
   const servicesCount = await Service.countDocuments();
 
 
   const apiFeature = new apiFeatures(Service.find(), req.query)
     .search()
     .filter()
-   // .pagination(resultPerPage);
+    //.pagination(resultPerPage);
 
   // const services= await apiFeature.query;  
 
@@ -50,6 +82,21 @@ exports.getsControllers = catchAsynceError(async (req, res,next) => {
     servicesCount,
     resultPerPage,
     filteredServiceCount,
+  });
+});
+
+//ADMIN services
+exports.getAdminServices = catchAsynceError(async (req, res,next) => {
+
+
+
+  const services= await Service.find();
+
+
+  res.status(200).json({
+    success: true,
+    services,
+ 
   });
 });
 
@@ -88,6 +135,53 @@ exports.updateService = catchAsynceError(async (req, res, next) => {
     return next(new ErrorHandler("Service Not found", 404));
   }
 
+
+  let images=[];
+
+  if(typeof req.body.images==="string")
+  {
+    images.push(req.body.images);
+  }
+  else
+  {
+    images= req.body.images;
+  }
+
+  if(images!==undefined)
+  {
+
+
+    for (let i = 0; i < service.images.length; i++) {
+    
+      const result= await cloudinary.v2.uploader.destroy(service.images[i].public_id);
+      
+    }
+  
+    const imagesLink=[];
+   
+    for(let i=0;i<images.length;i++)
+    {
+      const result= await cloudinary.v2.uploader.upload(images[i],{
+        folder:"services",
+      });
+   
+      imagesLink.push({
+        public_id: result.public_id,
+   
+        url: result.secure_url,
+      });
+    }
+   req.body.images= imagesLink; 
+
+
+  }
+
+
+  
+
+  
+
+
   service = await Service.findByIdAndUpdate(req.params.id, req.body, {
     new: true,
     runValidators: true,
@@ -110,6 +204,13 @@ exports.deleteService = catchAsynceError(async (req, res, next) => {
             message:"Service not found"
         })*/
     return next(new ErrorHandler("Service Not found", 404));
+  }
+
+
+  for (let i = 0; i < service.images.length; i++) {
+    
+    const result= await cloudinary.v2.uploader.destroy(service.images[i].public_id);
+    
   }
 
   await service.remove();
@@ -197,7 +298,7 @@ exports.deleteReview = catchAsynceError(async (req, res, next) => {
   });
 
 
-  /*let ratings=0;
+  let ratings=0;
 
   if(reviews.length==0)
   {
@@ -206,9 +307,9 @@ exports.deleteReview = catchAsynceError(async (req, res, next) => {
   else
   {
     ratings = avg / reviews.length;
-  }*/
+  }
 
-  const ratings= avg / reviews.length;
+  //const ratings= avg / reviews.length;
 
   
 

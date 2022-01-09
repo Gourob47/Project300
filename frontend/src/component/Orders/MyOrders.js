@@ -91,9 +91,7 @@ const MyOrders = ({ history }) => {
 
         <div className="myOrdersPage">
 
-        <div className="myOrdersHeading">
-          {`User Name:  ${user.name}  User Email:${user.email}`}
-          </div>
+       
           <DataGrid
             rows={rows}
             columns={columns}
@@ -103,8 +101,9 @@ const MyOrders = ({ history }) => {
             autoHeight
           />
 
-         
+
       </div>
+    
 
 
     

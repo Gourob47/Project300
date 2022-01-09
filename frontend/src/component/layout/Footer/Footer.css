@@ -1,13 +1,16 @@
 
 
 .container1{
-    margin: auto;
-    width: 95%;
-    background-color: #2E1114 ;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+   
+   background-color: #2E1114 ;
 }
 
 
 .row{
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
 }
@@ -16,6 +19,12 @@
     list-style: none;
 }
 
+.col h5{
+  
+    padding-top: 20px;
+    color: whitesmoke;
+    font: 300 1.5vmax "Roboto";
+}
 .col h4{
 
     color: blanchedalmond;
@@ -90,5 +99,11 @@ col ul li:not(:last-child){
         width: 80%;
         margin-bottom: 30px;
         
+    }
+    .col h5{
+  
+        padding-top: 20px;
+        color: whitesmoke;
+        font: 300 2vmax "Roboto";
     }
 }

@@ -1,8 +1,49 @@
+.heading1{
+    padding: 2vmax;
+    color: cornsilk;
+    font: 400 1.5vmax "Roboto";
+}
 .profileContainer{
    
     
-    background-color: aliceblue;
+    width: 100%;  
+    justify-content: center;
+    height: 100vh;
+    background-image: url('https://images.pexels.com/photos/460736/pexels-photo-460736.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+
+
+   
+
 }
+
+.profileContainer-2{
+   
+    
+    background-color:gainsboro;
+    margin: 0 auto;
+    padding: 3vmax;
+  
+    width: 40vmax;
+    align-items: center;
+    justify-content: center;
+}
+
+.profileContainer-2 >  svg{
+    font-size: 5rem;
+    color: crimson;
+}
+
+.profileContainer-2 > div{
+    display: flex;
+    padding: 1vmax;
+}
+
+.profileContainer-2 > div > p{
+   font: 300 1.5vmax "Roboto";
+    
+}
+
+
 
 .profileContainer > div{
    display: flex;
@@ -12,13 +53,40 @@
 
 }
 
-.profileContainer > div >  a{
-    padding: 10px;
-    margin: 10px;
-    text-decoration: none;
-    text-decoration: underline;      
-    font-size: 2rem;
-    color: #5D001E;
-    font: 400 2vmax "Roboto";    
+
+.profileContainer-3 > div >a{
+    
+    justify-content: center;
+    text-decoration: none;   
+    background-color: cornsilk;
+    font: 300 1.5vmax "Roboto"; 
+    padding: 2vmax;
+    border: 1px solid black;
+    color: darkred;
+   
 }
+
+.profileContainer-3 > div >a:hover{
+    
+    
+    color: green
+    ;
+   
+}
+
+@media screen and (max-width:600px) {
+
+    .profileContainer-2 > div{
+    display: flex;
+    padding: .5vmax;
+
+}
+.profileContainer-2 > div > p{
+    font: 300 1.8vmax "Roboto";
+     
+ }
+ 
+
+}
+
 

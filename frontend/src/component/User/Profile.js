@@ -28,28 +28,49 @@ export const Profile = ({ history }) => {
           <MetaData title={`${user.name}'s Profile`} />
 
           <div className="profileContainer">
-            <div>
-              <h1>My Profile</h1>
+            <div className="heading1"> 
+            <h1>My Profile</h1>
+            </div>
+         
+            <div className="profileContainer-2">
+              <PersonIcon/>
+              
               {/*<img src={user.avatar.url} alt={user.name}/>*/}
-              <Link  to="/me/update">Edit Profile</Link>
-        
              
-                <h4>Full Name</h4>
-                <p>{user.name}</p>
-           
-                <h4>Email</h4>
-                <p>{user.email}</p>
-            
-                <h4>Joined On</h4>
-                <p>{String(user.createdAt).substr(0,10)}</p>
+        
+              <div>
+                <p>USER_NAME :</p>
+                <p> {` : ${user.name}`} </p>
+              </div>
+         
+               <div>
+                 
+                <p>EMAIL :</p>
+                <p>{` : ${user.email}`}</p>
+               </div>
+             <div>
+                 
+             <p>JOINED_ON :</p>
+                <p>{` : ${String(user.createdAt).substr(0,10)}`}</p>
+             </div>
 
                 
            
-             
-                <Link to="/program">My Program</Link>
-                <Link to="/password/update">Change Password</Link>
+           
            
             </div>
+
+            <div className="profileContainer-3">
+
+          <div>
+          <Link  to="/me/update">Edit Profile</Link>
+             <Link to="/orders">My Program</Link>
+            <Link to="/password/update">Change Password</Link>
+          </div>
+
+          
+            </div>
+      
           </div>
         </Fragment>
       )}

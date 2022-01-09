@@ -1,49 +1,126 @@
 .ConfirmOrderPage {
   height: 100vh;
   text-align: center;
+  width: 100%;
  
  
   padding: 10vmax;
-  background-color: cornsilk;
+ background-image: url('https://images.pexels.com/photos/204993/pexels-photo-204993.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+
+}
+
+.ConfirmOrderPageBox{
+    margin: 3vmax;
+  
+    background-color:white;
+    display: grid;
+    grid-template-columns: 4fr 4fr;
+
+}
+
+.userInformation{
+  background-color:darkslategray;
+}
+
+.userInformation > svg{
+  margin: 2vmax;
+  padding-top: 1vmax;
+  font-size: 5rem;
+  color: darkgoldenrod;
+
+}
+
+.userInformation  > p{
+  font: 300 2vmax "Roboto";
+  color: beige;
+ 
 }
 
 .confirmCartItems {
-    padding: 5vmax;
-    padding-top: 2vmax;
+ 
+  margin: 3vmax;
+   
   }
 
-.confirmCartItems > p,
-.confirmCartItems > div {
-  font: 400 1.8vmax "Roboto";
- 
- 
-}
 
-.confirmCartItems > div > a{
+
+.confirmCartItems > div > p{
+  text-align: center;
+    font: 300 1.5vmax "Roboto";
+    border-bottom: 1px solid black;
+    color: blueviolet;
+    
+  
+  }
+  .conPrice{
+    display: grid;
+    grid-template-columns: 4fr 2fr;
+
+  }
+
+.conPrice > div > div > a{
     text-decoration: none;
-    color: #5D001E;
-    padding: 10px;
-    margin: 0 2vmax;
-  width: 60%;
-}
+   
 
-.name{
-   padding: 30px;
+    padding: 1vmax;
+    font: 300 1.5vmax "Roboto";
+    color: darkred;
   
 }
 
-.price{
-    font: 400 1.8vmax "Roboto";
-    padding-bottom: 20px;
+.conPrice > div > div > span{
+  text-decoration: none;
+ 
+
+  padding: 2vmax;
+  font: 300 1.5vmax "Roboto";
+  color: darkred;
+
 }
+
+.conPrice > div > div{
+  border: 1px solid black;
+}
+
+.conPrice > div{
+ font: 300 1.5vmax "Roboto";
+}
+
+
+
 .btn {
-    background-color: #5D001E;
-    color: white;
-    width: 30%;
+  
+  
+
     padding: 1vmax;
-    border: none;
+    width: 100%;
     margin: auto;
     cursor: pointer;
     transition: 0.5s;
     font: 400 2vmax "Roboto";
+    background-color:darkgrey;
+  }
+
+  .btn:hover {
+  
+  
+
+
+    background-color:darkgreen;
+    color: whitesmoke;
+  }
+
+  @media screen and (max-width: 600px) {
+
+    .ConfirmOrderPageBox{
+    
+    
+      background-color:white;
+      display: grid;
+      grid-template-columns: 1fr;
+  
+  }
+
+  
+    
   }

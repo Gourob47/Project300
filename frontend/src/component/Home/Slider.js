@@ -31,7 +31,7 @@ const Slider = () => {
     <Carousel.Item>
       <img
         className="d-block w-100"
-        src="https://images.pexels.com/photos/1604991/pexels-photo-1604991.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
+        src="https://images.pexels.com/photos/2570059/pexels-photo-2570059.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
         alt="Third slide"
       />
   

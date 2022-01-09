@@ -1,0 +1,50 @@
+.processOrderPage{
+    height: 80vh;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+
+.processOrderForm > h1{
+    padding: 2vmax;
+   
+    text-align: center;
+    font: 300 2vmax "Roboto";
+    border-bottom: 1px solid black;
+}
+
+
+
+
+.processOrderForm > div > select{
+    justify-content: center;
+    font: 300 2vmax "Roboto";
+    padding: 1vmax;
+    margin: 4vmax;
+   
+}
+
+#processOrderBtn{
+    justify-content: center;
+    font: 300 2vmax "Roboto";
+    padding: 1vmax;
+    margin: 4vmax;
+    background-color: crimson;
+    color: whitesmoke;
+    
+   
+   
+} 
+
+
+#processOrderBtn:hover{
+  
+    background-color: green;
+    color: whitesmoke;
+    
+   
+   
+} 
+

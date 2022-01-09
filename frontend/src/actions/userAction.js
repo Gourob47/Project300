@@ -27,6 +27,17 @@ import{
     RESET_PASSWORD_SUCCESS,
     RESET_PASSWORD_FAIL,
     CLEAR_ERRORS,
+    ALL_USER_REQUEST,
+    ALL_USER_SUCCESS,
+    USER_DETAILS_REQUEST,
+    USER_DETAILS_SUCCESS,
+    USER_DETAILS_FAIL,
+    UPDATE_USER_REQUEST,
+    UPDATE_USER_SUCCESS,
+    UPDATE_USER_FAIL,
+    DELETE_USER_REQUEST,
+    DELETE_USER_SUCCESS,
+    DELETE_USER_FAIL,
 } from "../constants/userConstants";
 
 import axios from "axios";
@@ -180,6 +191,81 @@ export const resetPassword=(token, passwords)=> async(dispatch)=>{
       
   }
 }
+
+
+export const getAllUser=()=> async(dispatch)=>{
+
+  try {
+      dispatch({type: ALL_USER_REQUEST})
+
+     
+
+      const {data}= await axios.get('/api/v1/admin/user');
+      
+  dispatch({type: ALL_USER_SUCCESS, payload: data.user});
+
+  } catch (error) {
+
+      dispatch({type:LOAD_USER_FAIL, payload: error.response.data.message});
+      
+  }
+}
+
+
+export const getUserDetails=(id)=> async(dispatch)=>{
+
+  try {
+      dispatch({type:USER_DETAILS_REQUEST})
+
+     
+
+      const {data}= await axios.get(`/api/v1/admin/user/${id}`);
+      
+  dispatch({type: USER_DETAILS_SUCCESS, payload: data.user});
+
+  } catch (error) {
+
+      dispatch({type:USER_DETAILS_FAIL, payload: error.response.data.message});
+      
+  }
+}
+
+
+export const updateUser = (id, userData) => async (dispatch) => {
+  try {
+    dispatch({ type: UPDATE_USER_REQUEST });
+
+    const config = { headers: { "Content-Type": "application/json" } };
+    const { data } = await axios.put(`/api/v1/admin/user/${id}`, userData, config);
+
+    dispatch({ type: UPDATE_USER_SUCCESS, payload: data.success });
+  } catch (error) {
+    dispatch({
+      type: UPDATE_USER_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
+
+
+export const deleteUser = (id) => async (dispatch) => {
+  try {
+    dispatch({ type: DELETE_USER_REQUEST });
+
+   
+    const { data } = await axios.delete(`/api/v1/admin/user/${id}`);
+
+    dispatch({ type: DELETE_USER_SUCCESS, payload: data });
+  } catch (error) {
+    dispatch({
+      type: DELETE_USER_FAIL,
+      payload: error.response.data.message,
+    });
+  }
+};
+
+
+
 
 
 

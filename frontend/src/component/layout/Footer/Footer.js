@@ -1,4 +1,4 @@
-import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
+//import "../../../../node_modules/bootstrap/dist/css/bootstrap.min.css";
 
 import React from "react";
 
@@ -72,6 +72,9 @@ const Footer = () => {
                        <a href="#"><i><FaFacebook/></i></a>
                      <a href="#"><i><FaTwitter/></i></a>
                      <a href="#"><i><FaInstagram/></i></a>
+                     <h5>Unlocked_Creations_2022</h5>
+                     
+                     
                      </ul>
                    
 

@@ -45,7 +45,7 @@ const {cartItems}= useSelector((state)=>state.cart);
   }
 
   function dashboard() {
-    history.push("/dashboard");
+    history.push("/admin/dashboard");
   }
   function orders() {
     history.push("/orders");

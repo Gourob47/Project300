@@ -6,46 +6,26 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
+
+.ser{
+  display: grid;
+  grid-template-columns: 6fr 2fr;
+}
+
 .services .card{
-    
-    color:#5D001E;
-    width: 14vmax;
-    display: flex;
-    flex-direction: column;
-    text-decoration: none;
-    margin: 2vmax;
-    transition: all .5s;
-    padding-bottom:.5vmax;
- 
-    
-   
- }
 
-/*.Featers .card >img{
+  color:#5D001E;
   width: 14vmax;
- } 
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+ 
+  transition: all .5s;
+  padding-bottom:.5vmax;
 
- .card {
-   margin: 0 auto;
-   
- }
-
- .Featers .card > div > span{
-  margin: 0.5vmax;
-  font: 300 .7vmax "Roboto";
-} 
+}
 
 
- .Featers .card p{
-  margin: 1vmax .5vmax;
-  font-size: 1.5vmax;
-  margin-bottom: 0;
- }
-
-
-.Featers .card > span{
-  padding: .5vmax .5vmax;
-} */
 
 
 
@@ -62,6 +42,41 @@
     max-width: 100%;
     min-height: 60vh;
    
+   
+  }
+
+  .services .services1 .card{
+  
+   margin: 2vmax;
+
+   
+  }
+
+  .services .services1 .card >p{
+    margin: 1vmax;
+    padding-top: 0;
+    font: 200 1.5vmax "Roboto";
+   
+  }
+
+  .services .services1 .card > div{
+    margin: 1vmax;
+    padding-top: 0;
+
+  }
+
+
+  
+  .services .services1 .card > div > span{
+  
+    padding-top: 0;
+    font: 100 1vmax "Roboto";
+  }
+
+  .services .services1 .card > span{
+    margin: 1vmax;
+    padding-top: 0;
+    font: 100 1vmax "Roboto";
   }
   
 .paginationBox{
@@ -73,19 +88,6 @@
   background-color: #f47a60;
 }
 
-.filterBox{
-  width: 20vmax;
-  /*position: absolute;*/
-  top: 15vmax;
-  left: 4vmax;
-  border: .5px  solid #5D001E;
-  border-radius: 3%;
-  margin: auto;
-  transition: all 0.5s;
- 
-
- 
-}
 
 .filterBox> div{
   justify-content: center;
@@ -125,23 +127,72 @@
 
 
 
+.filterBox {
+  width: 10vmax;
+  position: absolute;
+  top: 20vmax;
+  right: 10vmax;
+  
+}
+
+.categoryBox {
+  padding: 0%;
+}
+
+.category-link {
+  list-style: none;
+  color: rgba(0, 0, 0, 0.61);
+  font: 400 0.8vmax "Roboto";
+  margin: 0.4vmax;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+.category-link:hover {
+  color: tomato;
+}
+
+.filterBox > div{
+  padding-bottom: 2vmax;
+}
+.filterBox > div > fieldset {
+  border: 1px solid rgba(0, 0, 0, 0.329);
+  
+}
 
 
-  @media(max-width: 1150px){
-    .services .card >div{
+
+
+
+  @media(max-width: 1200px){
+    /*.services .card >div{
       margin: 0vmax;
       display: block;
       
-    }
+    }*/
     .filterBox{
-      width: 20vmax;
+      width: 8vmax;
       position: static;
       margin: auto;
     }
-    .service .services1{
-      min-height: 30vh;
+
+    .filterBox > div > fieldset {
+      border:none;
+      
     }
+    
+
+ 
+ 
+   
   }
+
+
+
+
+
+
+
+
 
 
   

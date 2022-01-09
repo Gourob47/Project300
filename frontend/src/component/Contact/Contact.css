@@ -1,27 +1,169 @@
-.req{
+.contact{
+    height: 40vh;
+    width: 100%;
+ 
+}
+
+
+#get{
+    background: url('https://images.pexels.com/photos/207456/pexels-photo-207456.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    min-height: 800px;
+    position: relative;
+    background-size: cover;
     text-align: center;
-    color: #2E1114;
-    font-style: italic;
-}
+    align-items: center;
+    justify-content: center;
+    color: cornsilk;
+ 
 
+   
+   }
+ 
+   .dark-overlay{
+     background: rgb(0,0,0,0.8);
+     position: absolute;
+     top: 0;
+     left: 0;
+     height: 100%;
+     width: 100%;
+     
+   }
 
-.req1{
-    color: #2E1114;
-    font-size: 1.4rem;
-}
-.req2{
-    background-color: #2E1114;
-    color: white;
-    transition: all 0.5s ease;
+.dark-overlay >h1{
+    font: 200 5vmax "Roboto";
+       padding-top: 20vmax;
+      color: mediumorchid;
+       
+   }
+
+   .dark-overlay > p{
+    font: 200 3vmax "Roboto";
+ 
+    color:blueviolet
     
 }
 
-.req2:hover{
-    color:aliceblue;
-    padding-left: 10px;
+ 
+
+   .heading > h1{
+       border-bottom: 1px solid #5D001E;
+   }
+
+
+.con-1{
+    display: grid;
+    grid-template-columns: 2fr 2fr 2fr;
+    justify-items: center;
+    height: 60vh;
+    margin: 5vmax;
+
+    
+}  
+
+.con-2{
+    border: 1px solid #5D001E;  
+    box-shadow:2px 3px 7px #5D001E;
+    transition:all .5s;
     
 }
-.border{
+
+.con-2 > div > img{
+
+height: 10vmax;
+width: 20vmax;
+   
+
+}
+
+.con-2 > div > h4{
+    padding-top: 2vmax;
+    text-align: center;
+    justify-content: center;
+    font: 300 1.5vmax "Roboto";
+    color: #5D001E;
+  
+}
+
+.con-2 > div > p{
+    padding-top: 2vmax;
+    text-align: center;
+    justify-content: center;
+}
+
+
+.con-2:hover{
+  transform: scale(1,1.1);
+   
+
+}
+
+
+.contactSection{
+    height: 100vh;
+    width: 100vw;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 4fr 4fr;
+    position: fixed;
+}
+
+.contacttSectionGradient{
+    background-image: linear-gradient(to bottom right, rgb(78,81,255), rgb());
+}
+
+@media screen and (max-width: 1000px) {
+
+    .dark-overlay >h1{
+      
+           padding-top: 25vmax;
+         
+           
+       }
     
-    border:  10px solid black;
+
+    .con-1{
+        display: grid;
+        grid-template-columns: 1fr;
+        justify-items: center;
+        height: 170vh;
+        margin: 5vmax;   
+       
+        
+      
+    }  
+
+    #get{
+        min-height: 500px;
+    }
+
+    .con-2 > div > img{
+
+        height: 20vmax;
+        width: 40vmax;
+           
+        
+        }
+
+
+        .con-2 > div > h4{
+            padding-top: 2vmax;
+            text-align: center;
+            justify-content: center;
+            font: 300 3vmax "Roboto";
+          
+        }
+
+        .con-3{
+            padding: 4vmax;
+        }
+
+    
+        
+
+    
+    
+    
 }

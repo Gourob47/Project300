@@ -1,0 +1,137 @@
+.menuBurger{
+    height: 4vmax;
+}
+.sol{
+    text-align: center; 
+    height: 70vh;
+    background-image: url('https://images.pexels.com/photos/1303081/pexels-photo-1303081.jpeg?auto=compress&&cs=tinysrgb&dpr=2&h=650&w=940');
+    color: aliceblue;
+   
+    
+}
+
+.sol > h1{
+    padding-top: 11vmax;
+}
+
+.sol-1{
+    justify-content: center;
+ 
+}
+.sol-1 > p{
+    font:  500 3vmax "Roboto";
+}
+.solution{
+    margin: 0;
+    padding: 7vmax;
+    width: 100vw;
+    max-width: 100%;
+    display: flex;
+    background-color: whitesmoke;
+}
+.solution-1 > img{
+    width: 800px;
+    height: 400px;
+   
+    padding:0 5vmax;
+    padding-right: 0;
+    transition: all 0.5s;
+    box-sizing: border-box;
+    
+    
+}
+
+.solution-1 > img:hover{
+
+   transform: scale(1,1.1);
+   box-shadow: 2px 2px solid black;
+
+    
+}
+
+
+.solution-2 > h1{
+
+    text-align: center;
+    color: #5D001E;
+    border-bottom: 1px solid #5D001E;
+    
+}
+
+.solution-2 > p{
+    padding: 1vmax;
+    text-align: center;
+    font:  200 1.7vmax "Roboto";
+    
+    
+}
+
+
+
+
+@media screen and (max-width: 1200px) {
+    .solution{
+        padding: 1vmax;  
+      
+        background-color: whitesmoke;
+  
+    }
+    .solution-1 > img{
+       
+        width: 200px;
+        height: 150px;
+      
+       
+        
+    }
+    
+    .solution-2 > p{
+      
+        text-align: center;
+        font:  200 1.4vmax "Roboto";
+        
+        
+    }
+
+    .sol{
+        text-align: center;
+        height: 50vh;
+        background-color: #5D001E;
+        color: aliceblue;
+       
+        
+    }
+    .sol > h1{
+        padding-top: 15vmax;
+    }
+
+    .solution-2 > h1{
+
+        text-align: center;
+        color: #5D001E;
+        font:  200 2vmax "Roboto";
+        
+        
+    }
+
+    .solution{
+        border-bottom: 1px solid #5D001E;
+        padding: 3vmax;
+        display: flex;
+     
+    }
+
+    .solution-2 > h1{
+
+        text-align: center;
+        color: #5D001E;
+        border: none;
+        
+    }
+    
+}
+
+
+
+
+

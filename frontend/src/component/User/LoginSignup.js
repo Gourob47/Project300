@@ -121,7 +121,8 @@ const LoginSignup = ({ history, location}) => {
                   <p onClick={(e) => switchTabs(e, "login")}>LOGIN</p>
                   <p onClick={(e) => switchTabs(e, "register")}>REGISTER</p>
                 </div>
-                <button ref={switcherTab}></button>
+                 <button ref={switcherTab}></button>
+             
               </div>
               <form className="loginForm" ref={loginTab} onSubmit={loginSubmit}>
                 <div className="loginEmail">

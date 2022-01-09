@@ -9,9 +9,11 @@ const crypto= require("crypto");
 const userSchema= new mongoose.Schema({
     name:{
         type:String, 
+        unique: true,
         required:[true,"Please Enter your name"],
         maxlength:[20,"Cannot exceed 20 word"],
-        minlength:[4,"Cannot less then 4 word"]
+        minlength:[4,"Cannot less then 4 word"], 
+        
     },
 
     email:{

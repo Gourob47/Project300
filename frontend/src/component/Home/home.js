@@ -35,7 +35,7 @@ const home = () => {
     
                  
                        
-       <Slider/>  
+       <Slider/> 
         
         
 

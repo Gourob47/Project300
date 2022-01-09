@@ -8,12 +8,12 @@ const serviceSchema= new  mongoose.Schema({
     
       },
  
-            identity:{
+           /* identity:{
             type:Number,
             required:true
            
             
-           },
+           },*/
 
            ratings:{
                type:Number,
@@ -64,7 +64,7 @@ const serviceSchema= new  mongoose.Schema({
        
 
   
-            catagory:{
+            category:{
                 type:String,
                 required:true
             },

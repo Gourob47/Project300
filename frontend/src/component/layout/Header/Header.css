@@ -1,5 +1,17 @@
 .speedDial{
     position: fixed;
-    right: 3vmax;
+    right: 3.5vmax;
     top: 4.2vmax;
 }
+
+
+@media screen and (max-width: 600px) {
+    .speedDial{
+        position: fixed;
+        right: 1.2vmax;
+        top: 4.2vmax;
+    }
+  
+    
+}
+

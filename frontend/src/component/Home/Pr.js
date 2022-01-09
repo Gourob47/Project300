@@ -4,6 +4,8 @@ import ReactStars from "react-rating-stars-component";
 
 import { Rating } from "@material-ui/lab";
 
+import "./Pr.css";
+
 
 const Service = ({service}) => {
 
@@ -19,14 +21,17 @@ const Service = ({service}) => {
     return (
         <Link className="card" to={`/service/${service._id}`} >
             <img src={service.images[0].url} alt={service.name} />
-            <p>{service.name}</p>
+            <p>{` ${service.name}`} </p>
+
+            <div>   <ReactStars {...options}/></div>
+          
 
             <div>
-                <ReactStars {...options}/>
-                <span>{service.numofReviews}</span>
+              
+                <span>{`Reviews: ${service.numofReviews}`}</span>
             </div>
 
-            <span>{service.price}</span>
+            <span>{`Price: ${service.price}$`}</span>
 
 
         </Link>

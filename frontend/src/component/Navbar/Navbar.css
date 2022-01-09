@@ -3,7 +3,8 @@
 
   .banner{
 
-    background-image: linear-gradient(to right, #5D001E, #5D001E);
+   background-image: url('https://images.pexels.com/photos/1040499/pexels-photo-1040499.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1');
+   
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -55,20 +56,20 @@
  } 
 
  .card {
-   margin: 0 auto;
+   margin:  auto;
    
  }
 
  .Featers .card > div > span{
-  margin: 0.5vmax;
-  font: 300 .7vmax "Roboto";
+  margin: .5vmax;
+  font: 300 1vmax "Roboto";
 } 
 
 
  .Featers .card p{
-  margin: 1vmax .5vmax;
-  font-size: 1.5vmax;
-  margin-bottom: 0;
+  margin: .3vmax;
+  font: 300 1.5vmax "Roboto";
+  
  }
 
 
@@ -78,26 +79,7 @@
 
 
 
-/*.Featers .card > div{
-     margin: 0.5vmax;
-     display: flex;
-     justify-content: flex-start;
- 
- }
 
- .Featers .card > div > span{
-   margin: 0.5vmax;
-   font: 100 .7vmax "Roboto";
-
- }*/
-
- /*.Featers .card > p{
-   
-  font: 1vmax .5vmax "Roboto";
-  font-size: 1.2vmax;
-  margin-bottom:0 ;
-
-}*/
 
 
 .Featers .card:hover{

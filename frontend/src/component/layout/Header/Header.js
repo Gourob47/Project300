@@ -26,7 +26,7 @@ const Header = () => {
     link1Url="/"
     link2Url="/services"
     link3Url="/Contact"
-    link4Url="/About us"
+    link4Url="/about"
     link1Size="1.2vmax"
 
     nav1JustiifyContent="flex-end"

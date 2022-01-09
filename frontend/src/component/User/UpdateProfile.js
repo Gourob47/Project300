@@ -11,7 +11,7 @@ import FaceIcon from "../../../node_modules/@mui/icons-material/Face";
 import "./LoginSignup.css";
 
 import { useDispatch, useSelector } from "react-redux";
-import { clearErrors, loadUser, updateProfile } from "../../actions/userAction";
+import { clearErrors, getUserDetails, loadUser, updateProfile } from "../../actions/userAction";
 import { useAlert } from "react-alert";
 import { useEffect } from "react";
 import { UPDATE_PROFILE_RESET } from "../../constants/userConstants";
@@ -19,11 +19,66 @@ import { UPDATE_PROFILE_RESET } from "../../constants/userConstants";
 import "./UpdateProfile.css";
 import MetaData from "../layout/MetaData";
 
-const UpdateProfile = ({ history }) => {
+const UpdateProfile = ({ history, match }) => {
   const dispatch = useDispatch();
   const alert = useAlert();
 
-  const { error, user, isUpdated, loading } = useSelector(
+  const {error, user}= useSelector((state)=>state.user);
+
+  const{loading, error:updateError, isUpdated}= useSelector((state)=>state.profile);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+
+
+  const userId= match.params.id;
+
+  useEffect(() => {
+    if (user)
+ 
+      
+  
+         
+    {
+      setName(user.name);
+      setEmail(user.email);
+   
+    }
+
+    if (error) {
+      alert.error(error);
+      dispatch(clearErrors());
+    }
+
+    if(updateError)
+    {
+      alert.error(updateError);
+      dispatch(clearErrors());
+    }
+
+    if (isUpdated) {
+      alert.success("Profile Updated Successfully");
+      dispatch(loadUser());
+
+      history.push("/account");
+      dispatch({ type: UPDATE_PROFILE_RESET });
+    }
+  }, [dispatch, error, alert, history, isUpdated, userId, user, updateError]);
+
+
+  const updateProfileSubmit = (e) => {
+    e.preventDefault();
+
+    const myForm = new FormData();
+
+    myForm.set("name", name);
+    myForm.set("email", email);
+
+  
+    dispatch(updateProfile(myForm));
+  };
+
+
+  /*const { error, user, isUpdated, loading } = useSelector(
     (state) => state.profile
   );
 
@@ -77,7 +132,7 @@ const UpdateProfile = ({ history }) => {
       history.push("/account");
       dispatch({ type: UPDATE_PROFILE_RESET });
     }
-  }, [dispatch, error, alert, history, isUpdated]);
+  }, [dispatch, error, alert, history, isUpdated]);*/
 
   return (
     <Fragment>

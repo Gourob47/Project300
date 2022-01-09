@@ -1,0 +1,131 @@
+.newService{
+    width: 100%;
+    
+  
+}
+
+.newServiceContainer {
+
+    
+    padding: 5vmax;
+    margin: 0;
+    justify-content: center;
+    
+    box-sizing: border-box;
+    background-color: rgb(221, 221, 221);
+    border-left: 1px solid rgba(0, 0, 0, 0.158);
+
+  
+    height: 100vh;
+  }
+  .newServiceContainer h1 {
+    color: rgba(0, 0, 0, 0.733);
+    font: 300 2rem "Roboto";
+    text-align: center;
+  }
+  
+  .createServiceForm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding: 3vmax;
+    
+ 
+    
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.267);
+  }
+  
+  .createServiceForm > div {
+    display: flex;
+    width: 100%;
+    align-items: center;
+  }
+  .createServiceForm > div > input,
+  .createServiceForm > div > select
+{
+    padding: 1vmax 4vmax;
+    padding-right: 1vmax;
+    width: 100%;
+    box-sizing: border-box;
+    border: 1px solid rgba(0, 0, 0, 0.267);
+    border-radius: 4px;
+    font: 300 0.9vmax cursive;
+    outline: none;
+  }
+  
+  .createServiceForm > div > svg {
+    position: absolute;
+    transform: translateX(1vmax);
+    font-size: 1.6vmax;
+    color: rgba(0, 0, 0, 0.623);
+  }
+  
+  .createServiceFormFile > input {
+    display: flex;
+    padding: 0%;
+  }
+  
+
+  .createServiceFormImage {
+    width: 100%;
+    overflow: auto;
+  }
+  
+  .createServiceFormImage > img {
+    width: 3vmax;
+    margin: 0 0.5vmax;
+  }
+  #createServiceBtn {
+    border: none;
+    background-color: #5D001E;
+    color: white;
+    font: 300 0.9vmax "Roboto";
+    width: 100%;
+    padding: 0.8vmax;
+    cursor: pointer;
+    transition: all 0.5s;
+    border-radius: 4px;
+    outline: none;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.219);
+  }
+  
+  #createServiceBtn:hover {
+    background-color: green;
+  }
+  
+  @media screen and (max-width: 600px) {
+    .newServiceContainer {
+      background-color: rgb(255, 255, 255);
+    }
+    .createServiceForm {
+      padding: 5vmax;
+    }
+  
+    .createServiceForm > div > input,
+    .createServiceForm > div > select,
+    .createServiceForm > div > textarea {
+      padding: 2.5vmax 5vmax;
+      font: 300 1.7vmax cursive;
+    }
+  
+    .createServiceForm > div > svg {
+      font-size: 2.8vmax;
+    }
+  
+    #createServiceFormFile > img {
+      width: 8vmax;
+      border-radius: 100%;
+    }
+  
+    #createServiceFormFile > input::file-selector-button {
+      height: 7vh;
+      font: 400 1.8vmax cursive;
+    }
+  
+    #createServiceBtn {
+      font: 300 1.9vmax "Roboto";
+      padding: 1.8vmax;
+    }
+  }

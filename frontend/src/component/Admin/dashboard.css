@@ -1,0 +1,95 @@
+.dashboard{
+    width: 100vw;
+    max-width: 100%;
+    display: grid;
+    grid-template-columns: 2fr 4fr;
+  
+   
+    
+}
+
+.dashboardContainer{
+    border-left: 1px solid black;
+    padding: 3rem 0;
+}
+
+.dashboardContainer > h1{
+    color: #5D001E;
+    font: 300 2rem "Roboto";
+    text-align: center;
+    border-bottom: 2px solid #5D001E;
+    padding: .5vmax;
+}
+
+.dashboardSummary > div {
+    display: flex;
+    background-color: white;
+    justify-content: center;
+  }
+
+
+  .dashboardSummaryBox2 > a {
+    color: black;
+    font: 300 2rem "Roboto";
+    text-align: center;
+    text-decoration: none;
+    background-color: slategray;
+    padding: 2rem;
+    width: 10vmax;
+    height: 10vmax;
+    margin: 2rem;
+   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    transition: all .5s;
+  }
+
+  .dashboardSummaryBox2 > a:hover{
+    background-color: darkslateblue;
+    color: black;
+
+  }
+
+  .dashboardSummaryBox2 > a:hover{
+      transform: scale(1.1);
+  }
+
+
+  @media screen and (max-width: 600px) {
+
+   
+    .dashboard {
+        grid-template-columns: 1fr;
+      }
+    
+      .dashboardContainer {
+        border-left: none;
+      }
+    
+      .dashboardSummary > div > p {
+        margin: 0;
+      }
+    
+      .dashboardSummaryBox2 > a {
+        padding: 0.5rem;
+        margin: 1rem;
+        font: 300 0.9rem "Roboto";
+      }
+    
+      
+  }
+
+
+  @media screen and (max-width: 1200px) {
+
+  
+      .dashboardSummaryBox2 > a {
+        padding: 0.5rem;
+        margin: 1rem;
+        font: 300 1.5vmax "Roboto";
+      }
+    
+      
+  }
