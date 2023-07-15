@@ -5,7 +5,13 @@ export const cartReducer = (state = { cartItems: [], /*shippingInfo:{},*/ }, act
   
     switch (action.type) {
         case ADD_TO_CART:
+          // return {
+          //   ...state,
+          //   cartItems: [...state.cartItems, action.payload],
+          // };
           const item = action.payload;
+
+          
     
           const isItemExist = state.cartItems.find(
             (i) => i.service === item.service
@@ -20,12 +26,15 @@ export const cartReducer = (state = { cartItems: [], /*shippingInfo:{},*/ }, act
               ),
               
             };
-          } else {
+          }
+           else {
             return {
-              ...state,
-              cartItems: [...state.cartItems, item],
+  
+               ...state,           
+                cartItems: [...state.cartItems.slice(1), item],
             };
           }
+       
 
           case REMOVE_CART_ITEM:
               return{

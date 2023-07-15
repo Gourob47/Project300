@@ -75,11 +75,8 @@ import UpdateUser from "./component/Admin/UpdateUser.js";
 import ServiceReviews from "./component/Admin/ServiceReviews.js"
 
 
-
-
-
-
 //import { getServiceDetails } from "./actions/serviceAction";
+
 
 function App() {
 
@@ -96,7 +93,7 @@ function App() {
     store.dispatch(loadUser());
   }, []);
 
-  window.addEventListener("contextmenu",(e)=>e.preventDefault());
+  //window.addEventListener("contextmenu",(e)=>e.preventDefault());
 
   return (
     <Router>
@@ -177,17 +174,12 @@ function App() {
   
       <ProtectedRoute isAdmin={true} exact path="/admin/user/:id" component={UpdateUser}/>
  
-
       <ProtectedRoute isAdmin={true} exact path="/admin/reviews" component={ServiceReviews}/>
      
      
       <Route exact path="/about" component={About} />
       <Route exact path="/contact" component={Contact} />
        
-      
-
-      
-
       <Footer />
     
     </Router>

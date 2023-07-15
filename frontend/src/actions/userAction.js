@@ -105,7 +105,6 @@ export const logout=()=> async(dispatch)=>{
 
   try {
      
-     
 
     await axios.get('/api/v1/logout');
       
@@ -164,7 +163,7 @@ export const forgotPassword=(email)=> async(dispatch)=>{
 
       const {data}= await axios.post('/api/v1/password/forgot',email, config);
       
-  dispatch({type: FORGOT_PASSWORD_SUCCESS, payload: data.message});
+      dispatch({type: FORGOT_PASSWORD_SUCCESS, payload: data.message});
 
   } catch (error) {
 
@@ -198,9 +197,8 @@ export const getAllUser=()=> async(dispatch)=>{
   try {
       dispatch({type: ALL_USER_REQUEST})
 
-     
-
       const {data}= await axios.get('/api/v1/admin/user');
+     
       
   dispatch({type: ALL_USER_SUCCESS, payload: data.user});
 

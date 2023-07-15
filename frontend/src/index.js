@@ -9,7 +9,7 @@ import Store from './Store';
 
 import {positions,transitions, Provider as AlertProvider } from "react-alert";
 import AlertTemplate from "react-alert-template-basic";
-
+import { createRoot } from "react-dom/client";
 
 const options= {
 
@@ -17,14 +17,15 @@ const options= {
   position: positions.BOTTOM_CENTER,
   transition: transitions.SCALE,
 }
-
-ReactDOM.render(
+const container=document.getElementById('root')
+const root=createRoot(container);
+root.render(
   <Provider store={Store}>
     <AlertProvider template={AlertTemplate} {...options}>
     <App />
     </AlertProvider>
   </Provider>,
-  document.getElementById('root')
+ 
 );
 
 

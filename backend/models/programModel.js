@@ -39,6 +39,16 @@ const programSchema = new mongoose.Schema({
         required: true,
       },
 
+      date:{
+        type: String,
+        required:true,
+      },
+
+      location:{
+        type:String,
+        required: true,
+      },
+
       service: {
         type: mongoose.Schema.ObjectId,
         ref: "Service",
@@ -83,22 +93,28 @@ const programSchema = new mongoose.Schema({
   confirmProgram: {
     type: String,
     required: true,
-    default: " Pending",
+    default: "Pending",
   },
-
 
   totalCost: {
     type: Number,
     required: true,
     default: 0,
   },
+  date:{
+    type:String,
+    required:true,
+  },
 
-  
   deliveredAt: Date,
   createdAt: {
-    type: Date,
-    default: Date.now,
+     type: Date,
+     default: new Date().setHours(0,0,0,0),
   },
 });
+
+
+
+
 
 module.exports = new mongoose.model("Program", programSchema);

@@ -19,9 +19,11 @@ import { useAlert } from "react-alert";
 import { useDispatch, useSelector } from "react-redux";
 import { logout } from "../../../actions/userAction";
 import { color } from "@mui/system";
+import { removeItemsFromCart } from "../../../actions/cartAction";
 
 const UserOptions = ({ user }) => {
 const {cartItems}= useSelector((state)=>state.cart);
+
 
   const history = useHistory();
   const alert = useAlert();
@@ -60,7 +62,11 @@ const {cartItems}= useSelector((state)=>state.cart);
   }
 
   function logoutUser() {
+    if(cartItems.length>0)
+     {dispatch(removeItemsFromCart(cartItems[0].service))}
     dispatch(logout());
+   
+    history.push('/home')
     alert.success("Logout Success");
   }
 

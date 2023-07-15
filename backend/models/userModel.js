@@ -11,15 +11,16 @@ const userSchema= new mongoose.Schema({
         type:String, 
         unique: true,
         required:[true,"Please Enter your name"],
-        maxlength:[20,"Cannot exceed 20 word"],
+        maxlength:[50,"Cannot exceed 50 word"],
         minlength:[4,"Cannot less then 4 word"], 
         
     },
 
     email:{
       type:String,
-      required:[true,"please enter your email"],
       unique:true,
+      required:[true,"please enter your email"],
+     
       validate:[validator.isEmail,"Please enter a valid Email"]
 
     },

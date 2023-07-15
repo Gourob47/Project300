@@ -62,20 +62,9 @@ const Navbar = () => {
           <div className="Featers">
             <div className="container2">
               {services &&
-                services.map((service) => <Service service={service} />)}
+                services.map((service,index) => <Service key={index} service={service} />)}
 
-              {/*<Service service={service} /> 
-               <Service service={service} />
-               <Service service={service} />
-               <Pr service={service}/>
-               <Pr service={service} />
-               <Pr service={service} />
-               <Pr service={service} />
-               <Pr service={service} /> 
-               <Pr service={service}/>
-               <Pr service={service} />
-               <Pr service={service} />
-              <Pr service={service} />*/}
+            
             </div>
           </div>
         </Fragment>

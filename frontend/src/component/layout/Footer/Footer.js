@@ -10,13 +10,13 @@ import { FaFacebook, FaInstagram, FaTwitter } from "react-icons/fa";
 
 const Footer = () => {
     return (
-      <footer class="footer">
+      <footer className="footer">
 
-          <div class="container1">
+          <div className="container1">
 
-              <div class="row">
+              <div className="row">
 
-              <div class="col mt-4">
+              <div className="col mt-4">
                  
                   <ul>
                       <h4  >How We Works</h4>
@@ -33,7 +33,7 @@ const Footer = () => {
                   </ul>
               </div>
 
-              <div class="col mt-4">
+              <div className="col mt-4">
             
                   <ul>
                       <h4>Who We help</h4>
@@ -48,7 +48,7 @@ const Footer = () => {
                   </ul>
               </div>
 
-              <div class="col mt-4">
+              <div className="col mt-4">
                  
                   <ul>
                       <h4>About US</h4>
@@ -63,10 +63,10 @@ const Footer = () => {
               </div>
 
 
-              <div class="col mt-4">
+              <div className="col mt-4">
                 
              
-                 <div class="social">
+                 <div className="social">
                      <ul>
                      <h4>Follow us</h4>
                        <a href="#"><i><FaFacebook/></i></a>

@@ -21,10 +21,11 @@
 }
 
 .CartItemCard > div >a{
-    padding-top: 20px;
+    padding-top: 100px;
     color: #5D001E;
-    text-decoration: none;
+    /* text-decoration:dotted ; */
     font: 300 2vmax "Roboto";
+   
 }
 
 .CartItemCard > div >span{

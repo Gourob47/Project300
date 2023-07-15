@@ -20,7 +20,7 @@ const Service = ({service}) => {
     }
     return (
         <Link className="card" to={`/service/${service._id}`} >
-            <img src={service.images[0].url} alt={service.name} />
+            <img   src={service.images[0].url} alt={service.name} />
             <p>{` ${service.name}`} </p>
 
             <div>   <ReactStars {...options}/></div>

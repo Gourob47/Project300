@@ -106,7 +106,12 @@ exports.logout= catchAsynceError( async (req,res,next)=>{
 
 exports.forgotPassword = catchAsynceError(async (req,res,next)=>{
 
+    console.log(req.body.email);
+
     const user= await User.findOne({email: req.body.email});
+
+
+    console.log(user);
 
 
     if(!user){
@@ -116,16 +121,17 @@ exports.forgotPassword = catchAsynceError(async (req,res,next)=>{
 
     //Get ResetPassword Token
 
+    
+
     const resetToken= user.getResetPasswordToken();
     await user.save({validateBeforeSave: false});
     
   //  const resetPasswordUrl= `${req.protocol}://${req.get("host")}/api/v1/password/reset/${resetToken}`;
 
-  const resetPasswordUrl= `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
+    const resetPasswordUrl= `${process.env.FRONTEND_URL}/password/reset/${resetToken}`;
 
 
     const message= `Your password reset token is : \n\n${resetPasswordUrl} \n\n If you have not interested please Ignore it`;
-
 
     try
     {

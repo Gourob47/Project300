@@ -28,8 +28,6 @@ export const myOrders=()=>async(dispatch)=>{
     try {
         dispatch({type: MY_ORDER_REQUEST});
 
-      
-
         const {data}= await axios.get(`/api/v1/programs/me`);
         
         /* */
@@ -44,15 +42,13 @@ export const myOrders=()=>async(dispatch)=>{
 }
 
 
-
 export const getAllOrders=()=>async(dispatch)=>{
     try {
+
         dispatch({type:ALL_ORDER_REQUEST});
 
-      
-
-        const {data}= await axios.get(`/api/v1/admin/programs`);
-        
+        const {data}= await axios.get(`/api/v1/admin/programs`);   
+           
         /* */
         dispatch({type:ALL_ORDER_SUCCESS, payload: data.programs});
 
@@ -66,12 +62,16 @@ export const getAllOrders=()=>async(dispatch)=>{
 
 
 export const updateOrder=(id,order)=>async(dispatch)=>{
+
+    // console.log(id,order);
     try {
         dispatch({type: UPDATE_ORDER_REQUEST});
 
         const config= {headers: {"Content-Type": "application/json"}};
 
         const {data}= await axios.put(`/api/v1/admin/program/${id}`,order, config);
+        
+        // console.log("update order:"+ data);
         
         dispatch({type:UPDATE_ORDER_SUCCESS, payload: data.success});
 

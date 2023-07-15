@@ -25,11 +25,13 @@ const NewService = ({ history }) => {
   const [price, setPrice] = useState(0);
  
   const [category, setCategory] = useState("");
+
+  const [description,setDescription]=useState("")
   
   const [images, setImages] = useState([]);
   const [imagesPreview, setImagesPreview] = useState([]);
 
-  const categories = ["Marriage", "Reception", "Security", "Concert"];
+  const categories = ["Marriage", "Reception", "Security", "Concert","Birthday"];
 
   useEffect(() => {
     if (error) {
@@ -52,6 +54,7 @@ const NewService = ({ history }) => {
     myForm.set("name", name);
     myForm.set("price", price);
     myForm.set("category", category);
+    myForm.set("description",description);
  
 
     images.forEach((image) => {
@@ -112,6 +115,16 @@ const NewService = ({ history }) => {
                 onChange={(e) => setPrice(e.target.value)}
               />
             </div>
+
+             <div>
+              <DescriptionIcon />
+              <input
+                type="text"
+                placeholder="Description"
+                required
+                onChange={(e) => setDescription(e.target.value)}
+              />
+            </div> 
 
             <div>
               <AccountTreeIcon />

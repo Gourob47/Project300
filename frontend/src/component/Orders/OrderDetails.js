@@ -27,7 +27,7 @@ const OrderDetails = ({match}) => {
     }, [dispatch, alert, error, match.params.id]);
     return (
         <div>
-            Gourob
+       
         </div>
     )
 }

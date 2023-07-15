@@ -3,10 +3,11 @@ const mongoose= require("mongoose");
 const serviceSchema= new  mongoose.Schema({
     name:{
         type:String,
-        required: true,
-        
-    
+        required: true,  
       },
+
+     
+
  
            /* identity:{
             type:Number,
@@ -24,7 +25,7 @@ const serviceSchema= new  mongoose.Schema({
              {
                  public_id:{
                      type:String,
-                     required: true,
+                      required: true,
                  },
                  url:{
                      type:String,
@@ -61,14 +62,18 @@ const serviceSchema= new  mongoose.Schema({
                default:0,
            },
 
-       
-
-  
             category:{
                 type:String,
                 required:true
             },
 
+            description:{
+                type:String, 
+                required: true,
+         
+            },
+
+      
             price:{
                 type:Number,
                 required:true

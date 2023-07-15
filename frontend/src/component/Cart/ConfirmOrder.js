@@ -12,25 +12,25 @@ const ConfirmOrder = ({ history }) => {
   const alert = useAlert();
 
   const { cartItems } = useSelector((state) => state.cart);
+
+ 
   const { user } = useSelector((state) => state.user);
   const { error } = useSelector((state) => state.order);
 
   const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0);
 
+  
+
   const order = {
     package: cartItems,
     totalCost: totalPrice,
+    
   };
 
   const proceed = (e) => {
     e.preventDefault();
-    //const data={
-
-    //totalPrice,
-
-    // }
-    //  sessionStorage.setItem("orderInfo", JSON.stringify(data));
     dispatch(createOrder(order));
+    dispatch(removeItemsFromCart(cartItems[0].service));
     history.push("/success");
   };
 
@@ -58,19 +58,23 @@ const ConfirmOrder = ({ history }) => {
 
           <div className="conPrice">
             <div>
-              <h4>Services</h4>
+             
               {cartItems &&
                 cartItems.map((item) => (
                   <div key={item.service}>
-                    <Link to={`/service/${item.service}`}>{item.name}:</Link>
+                    <Link to={`/service/${item.service}`}>{item.name}</Link>
 
-                    {/*<span>{item.price}</span>*/}
+                    <h5>Location: {item.location}</h5>
+                    <h5>Date: {item.date}</h5>
+                    <h5>Total_Cost: {item.price}</h5>
+            
                   </div>
+              
                 ))}
-              <h4>Total Price</h4>
+              
             </div>
 
-            <div>
+            {/* <div>
               <h4>Price</h4>
               {cartItems &&
                 cartItems.map((item) => (
@@ -79,7 +83,7 @@ const ConfirmOrder = ({ history }) => {
                   </div>
                 ))}
               <span>{totalPrice}</span>
-            </div>
+            </div> */}
           </div>
 
           <button className="btn" onClick={proceed}>

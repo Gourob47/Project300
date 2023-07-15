@@ -36,9 +36,6 @@ import {
   DELETE_REVIEW_FAIL,
 } from "../constants/serviceConstants";
 
-
-
-
   export const serviceReducer =(state = { services: [] }, action) => {
     switch (action.type) {
       case ALL_SERVICE_REQUEST:
@@ -54,7 +51,7 @@ import {
           services: action.payload.services,
           servicesCount: action.payload.servicesCount,
           resultPerPage: action.payload.resultPerPage,
-          filteredServiceCount: action.payload. filteredServiceCount,
+          filteredServiceCount: action.payload.filteredServiceCount,
         };
 
         case ADMIN_SERVICE_SUCCESS:
@@ -85,7 +82,7 @@ import {
   };
 
 
-  export const newServiceReducer = (state = { service: {} }, action) => {
+export const newServiceReducer = (state = { service: {} }, action) => {
     switch (action.type) {
       case NEW_SERVICE_REQUEST:
         return {
@@ -173,37 +170,30 @@ import {
   };
 
 
-
-
-  export const serviceDetailsReducer =(state = { service: {} }, action) => {
+export const serviceDetailsReducer =(state = { service: {} }, action) => {
     switch (action.type) {
       case SERVICE_DETAILS_REQUEST:
         return {
           loading: true,
           ...state,
         };
-
       case SERVICE_DETAILS_SUCCESS:
         return {
           loading: false,
           service: action.payload.service,
          
         };
-
       case SERVICE_DETAILS_FAIL:
         return {
           loading: false,
           error: action.payload,
         };
 
-
         case CLEAR_ERRORS:
             return {
              ...state,
               error: null,
             };
-
- 
 
       default:
         return state;
@@ -212,7 +202,7 @@ import {
 
 
 
-  export const newReviewReducer = (state = {}, action) => {
+export const newReviewReducer = (state = {}, action) => {
     switch (action.type) {
       case NEW_REVIEW_REQUEST:
         return {
@@ -246,7 +236,7 @@ import {
   };
 
 
-  export const adminReviewReducer = (state = {reviews:[]}, action) => {
+export const adminReviewReducer = (state = {reviews:[]}, action) => {
     switch (action.type) {
       case ALL_REVIEW_REQUEST:
         return {
@@ -276,7 +266,7 @@ import {
   };
 
 
-  export const deleteReviewReducer = (state = {}, action) => {
+export const deleteReviewReducer = (state = {}, action) => {
     switch (action.type) {
       case DELETE_REVIEW_REQUEST:
         return {

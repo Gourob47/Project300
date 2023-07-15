@@ -12,7 +12,7 @@ import { getAdminService } from './actions/serviceAction';
 
 const reducer= combineReducers({
     services: serviceReducer,
-    serviceDetails: serviceDetailsReducer,
+     serviceDetails: serviceDetailsReducer,
      user: userReducer,
      profile: profileReducer,
      forgotPassword: forgotPasswordReducer,
@@ -59,5 +59,7 @@ const store= createStore(
     initialState,
     composeWithDevTools(applyMiddleware(...middleware))
 );
+
+
 
 export default store;

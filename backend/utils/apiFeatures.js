@@ -17,7 +17,7 @@ class apiFeatures{
             },
         }:{};
 
-        console.log(keyword);
+      
 
         this.query= this.query.find({...keyword});
         return this;
@@ -27,7 +27,7 @@ class apiFeatures{
     filter(){
         const queryCopy= {...this.queryStr};
 
-       console.log(queryCopy);
+      
 
         ///remove some field from catagory
 
@@ -41,12 +41,12 @@ class apiFeatures{
         queryStr= queryStr.replace(/\b(gt|gte|lt|lte)\b/g,(key)=>`$${key}`);
 
 
-       console.log(queryCopy);
+   
         //this.query= this.query.find(queryCopy);
 
         this.query=this.query.find(JSON.parse(queryStr));
 
-        console.log(queryStr);
+       
         return this;
     }
 

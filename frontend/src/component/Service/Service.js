@@ -79,7 +79,7 @@ const Service = ({ match }) => {
           <div className="services">
             <div className="services1">
               {services &&
-                services.map((service) => <Services service={service} />)}
+                services.map((service,index) => <Services key={index} service={service} />)}
               </div>
               </div>
 

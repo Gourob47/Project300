@@ -10,7 +10,10 @@ const CartItemCard = ({item, deleteCartItems}) => {
             {/*<img src={item.image} alt='ss'></img>*/}
             <div>
                 <Link to={`/service/${item.service}`}>{item.name}</Link>
-                <span>{`Price: ${item.price}`}</span>
+                <h6>{`Price: ${item.price}`}</h6>
+                <h6>{`Location: ${item.location}`}</h6>
+                <h6>{`Date: ${item.date}`}</h6>
+
                 <p onClick={()=>{deleteCartItems(item.service)}}>Remove</p>
             </div>
             

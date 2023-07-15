@@ -5,9 +5,13 @@ const catchAsynceError = require("../middleware/catchAsyncError");
 const apiFeatures = require("../utils/apiFeatures");
 
 const cloudinary= require("cloudinary");
+const { dateVerification } = require("./programControllers");
 
 //create by----ADMIN
 exports.createService = catchAsynceError(async (req, res, next) => {
+
+ 
+
   
   let images=[];
 
@@ -39,13 +43,19 @@ exports.createService = catchAsynceError(async (req, res, next) => {
   
   
   req.body.user = req.user.id;
+  const user= req.user.id;
 
-  const service = await Service.create(req.body);
+  try {
+    const service = await Service.create(req.body);
+    res.status(200).json({
+      success: true,
+      service,
+    });
+  } catch (error) {
+    return next(new ErrorHandler(error, 500));
+  }
 
-  res.status(200).json({
-    success: true,
-    service,
-  });
+
 });
 
 //get all service
@@ -103,6 +113,8 @@ exports.getAdminServices = catchAsynceError(async (req, res,next) => {
 //get one service
 
 exports.getOneService= catchAsynceError(async (req, res, next) => {
+ 
+ // dateVerification
   const service = await Service.findById(req.params.id);
 
   if (!service) {

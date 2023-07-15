@@ -11,6 +11,7 @@ import { Button } from '@mui/material';
 
 import EditIcon from "../../../node_modules/@mui/icons-material/Edit";
 import DeleteIcon from "../../../node_modules/@mui/icons-material/Delete"
+import CompleteIcon from "../../../node_modules/@mui/icons-material/CheckOutlined"
 import Sidebar from './Sidebar'
 //import { getAdminService, clearErrors, deleteService } from '../../actions/serviceAction';
 import { useAlert } from 'react-alert';
@@ -19,6 +20,7 @@ import { useAlert } from 'react-alert';
 import {DELETE_SERVICE_RESET} from "../../constants/serviceConstants"
 import { deleteOrder, getAllOrders, clearErrors } from '../../actions/orderAction';
 import { DELETE_ORDER_RESET } from '../../constants/orderConstants';
+import { getAllUser } from '../../actions/userAction';
 
 
 
@@ -31,6 +33,8 @@ const OrderList = ({history}) => {
     const alert = useAlert();
   
     const { error, orders } = useSelector((state) => state.allOrders);
+
+    const { users } = useSelector((state) => state.allUsers);
   
     const { error: deleteError, isDeleted } = useSelector((state) => state.updateOrders);
   
@@ -54,21 +58,60 @@ const OrderList = ({history}) => {
         history.push("/admin/orders");
         dispatch({ type: DELETE_ORDER_RESET });
       }
-  
+      dispatch(getAllUser());
       dispatch(getAllOrders());
+
+      
     }, [dispatch, alert, error, deleteError, history, isDeleted]);
+
+    
   
     const columns = [
-        {field: "id", headerName:'Service ID', minWidth: 200, flex: 0.5},
+        {field: "id", headerName:'Service ID', minWidth: 50, flex: 0.5},
+
 
         {
+          field: "name",
+          headerName: "Service Name",
+          minWidth: 50,
+          flex: 0.5,
+      
+        },
+
+
+        {
+          field: "user",
+          headerName: "User",
+          minWidth: 50,
+          flex: 0.5,
+      
+        },
+
+
+        {
+          field: "date",
+          headerName: "Date",
+          minWidth: 50,
+          flex: 0.5,
+      
+        },
+
+        {
+          field: "location",
+          headerName: "Location",
+          minWidth: 150,
+          flex: 0.5,
+      
+        },
+
+      
+
+          {
             field: "status",
             headerName: "Status",
-            minWidth: 150,
+            minWidth: 50,
             flex: 0.5,
-      
-       
-          
+        
           },
       
       
@@ -77,7 +120,7 @@ const OrderList = ({history}) => {
             field: "amount",
             headerName: "Amount",
             type: "number",
-            minWidth: 150,
+            minWidth: 50,
             flex: 0.5,
           },
       
@@ -92,9 +135,12 @@ const OrderList = ({history}) => {
         renderCell: (params) => {
           return (
             <Fragment>
-              <Link to={`/admin/order/${params.getValue(params.id, "id")}`}>
+              {params.getValue(params.id,"status")==="Pending"?<Link to={`/admin/order/${params.getValue(params.id, "id")}`}>
                 <EditIcon />
-              </Link>
+              </Link>:<CompleteIcon/>}
+              
+
+             
   
               <Button
                 onClick={() =>
@@ -110,12 +156,23 @@ const OrderList = ({history}) => {
     ];
   
     const rows = [];
+
+
+
+
   
     orders &&
       orders.forEach((item) => {
+        
+       
+        const userName=users.find((it)=>it._id===item.user)
+          
         rows.push({
           id: item._id,  
-          name:  item.name,     
+          date:  item.package[0].date,
+          user:  users.length>0?userName.name:'',
+          name:  item.package[0].name,  
+          location: item.package[0].location,   
           status: item.confirmProgram,
           amount: item.totalCost,
         });
@@ -128,13 +185,10 @@ const OrderList = ({history}) => {
             <div className='heading'>User Program Request</div>
 
             <div className='serviceTableContainer'>
-
-    
-            <DataGrid
-            
+            <DataGrid       
             rows={rows}
             columns={columns}
-            pageSize={10}
+            pageSize={8}
             disableSelectionOnClick
             className='serviceListTable'
             autoHeight

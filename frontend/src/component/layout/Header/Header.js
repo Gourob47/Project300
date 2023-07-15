@@ -1,14 +1,20 @@
 import React from 'react';
-import {ReactNavbar} from "overlay-navbar";
+//import {ReactNavbar} from "overlay-navbar";
+import {ReactNavbar} from "overlay-navbar"
 import logo from "../../../images/logo.png";
+
+import {FaUserAlt, FaSearch} from "react-icons/fa";
+import {AiOutlineSearch} from "react-icons/ai"
 
 
 
 
 const Header = () => {
-    return <ReactNavbar 
+   
+    return (
+    <ReactNavbar 
     burgerColor="#19181A"
-    //burgerColorHover="#ad2d24"
+    
     logo={logo}
 
     logowidth="80px"
@@ -17,7 +23,7 @@ const Header = () => {
     logoHoverSize="10px"
     logoHoverColor="white"
   
-
+   
 
     link1Text="Home"
     link2Text="Services"
@@ -28,6 +34,7 @@ const Header = () => {
     link3Url="/Contact"
     link4Url="/about"
     link1Size="1.2vmax"
+   
 
     nav1JustiifyContent="flex-end"
     nav2JustiifyContent="flex-end"
@@ -43,23 +50,51 @@ const Header = () => {
 
     link3Margin=".7vmax"
     link2Margin="1.3vmax"
+
+  
+  
+
+
   
     
-  
-    profileIconColor= "white"
-    searchIconColor= "white"
-    cartIconColor= "white"
+
+   searchIcon = {true}
+   SearchIconElement={FaSearch}
+   searchIconMargin = {5}
+   searchIconUrl = "/search"
+   searchIconSize = "1.5vmax"
+   searchIconColor = "white"
+   searchIconColorHover = "profileIconColor"
+   searchIconTransition = "0.5"
+
+
+
+
+    profileIcon = {true}
+    ProfileIconElement={FaUserAlt}
+    profileIconMargin = {5}
+    profileIconUrl = "/login"
+    profileIconSize = "1.5vmax"
+    profileIconColor = "white"
+    profileIconColorHover = "profileIconColor"
+    profileIconTransition = "0.5"
+
+
     
-    profileIconUrl="/login"
-    profileIconColorHover="#eb4034"
-    searchIconColorHover="#eb4034"
-    cartIconColorHover="#eb4034"
-    cartIconMargin="1vmax"
+   
+
+
+  
+  
+
 
     
 
     
-    />;
+
+    
+    />
+    )
     
 }
 

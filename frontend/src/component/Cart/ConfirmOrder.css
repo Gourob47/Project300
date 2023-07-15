@@ -54,12 +54,13 @@
   }
   .conPrice{
     display: grid;
-    grid-template-columns: 4fr 2fr;
+    grid-template-columns: 4fr 0fr;
+    padding-bottom: 10px;
 
   }
 
 .conPrice > div > div > a{
-    text-decoration: none;
+   
    
 
     padding: 1vmax;
@@ -90,8 +91,6 @@
 
 .btn {
   
-  
-
     padding: 1vmax;
     width: 100%;
     margin: auto;

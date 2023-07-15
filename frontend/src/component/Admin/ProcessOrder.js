@@ -40,12 +40,16 @@ const ProcessOrder = ({history, match}) => {
           const myForm = new FormData();
       
           myForm.set("status",status);
+          
         
           dispatch(updateOrder(match.params.id, myForm));
+          
         };
 
 
         useEffect(() => {
+
+          
         
             if (error) {
               alert.error(error);
@@ -56,11 +60,11 @@ const ProcessOrder = ({history, match}) => {
               alert.error(updateError);
               dispatch(clearErrors());
             }
-        
-            if (isUpdated) {
+          
+             if(isUpdated) {
               alert.success("Order Updated Successfully");
-              history.push("/admin/orders");
               dispatch({ type: UPDATE_ORDER_RESET });
+              history.push("/admin/orders");
             }
           }, [
             dispatch,
@@ -102,12 +106,12 @@ const ProcessOrder = ({history, match}) => {
                                 <div>
                                
                                     <select 
-                                    onChange={(e)=>setStatus(e.target.value)}
-                                    >
-                                      
-                                        <option value="">Choose Option</option>
-                                       
+                                    onChange={(e)=>setStatus(e.target.value)}>            
+                                        <option value="">Choose Option</option>                                      
                                         <option value="Confirm">Confirm</option>
+                                        <option value="Cancel">Cancel</option>
+                                        <option value="Cancel1">Insufficient Staff</option>
+                                        <option value="Cancel2">Insufficient Tools</option>
        
                                     </select>
                                     <Button

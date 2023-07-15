@@ -18,6 +18,9 @@ const MyOrders = ({ history }) => {
   const alert = useAlert();
 
   const { loading, error, orders } = useSelector((state) => state.myOrder);
+
+
+
   
 
   const { cartItems } = useSelector((state) => state.cart);
@@ -26,16 +29,30 @@ const MyOrders = ({ history }) => {
 
 
   const columns = [
-    { field: "id", headerName: "Service ID", minWidth: 150, flex: 1 },
+    { field: "id", headerName: "Service Name", minWidth: 70, flex: 1 },
 
+    {
+      field: "location",
+      headerName: "Location",
+      minWidth: 70,
+      flex: 1,
+
+    },
+
+    {
+      field: "date",
+      headerName: "Date",
+      minWidth: 70,
+      flex: 1,
+
+    },
+ 
     {
       field: "status",
       headerName: "Status",
-      minWidth: 150,
+      minWidth: 70,
       flex: 0.5,
 
- 
-    
     },
 
 
@@ -44,7 +61,7 @@ const MyOrders = ({ history }) => {
       field: "amount",
       headerName: "Amount",
       type: "number",
-      minWidth: 150,
+      minWidth: 50,
       flex: 0.5,
     },
 
@@ -57,7 +74,10 @@ const MyOrders = ({ history }) => {
   orders &&
     orders.forEach((item, index) => {
       rows.push({
-        id: item._id,
+        
+        id: item.package[0].name,
+        date: item.date,
+        location:item.package[0].location,
         status: item.confirmProgram,
         amount: item.totalCost,
         

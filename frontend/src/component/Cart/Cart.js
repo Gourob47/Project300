@@ -6,13 +6,17 @@ import { removeItemsFromCart } from '../../actions/cartAction';
 import OutService from "../../../node_modules/@mui/icons-material/NotAccessible";
 import { Typography } from '@mui/material';
 import { Link } from 'react-router-dom';
-
+import { ToastContainer,toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Cart = ({history}) => {
 
     const dispatch= useDispatch ();
     const {cartItems}= useSelector((state)=>state.cart);
 
+ 
+
     const deleteCartItems=(id)=>{
+        
         dispatch(removeItemsFromCart(id));
     }
 
@@ -34,9 +38,9 @@ const Cart = ({history}) => {
 
     return (
               <Fragment>
-                  {cartItems.length===0?(
+                {cartItems.length===0?(
                     
-                    <div className='emptyCart'>
+                <div className='emptyCart'>
                  <OutService/>
                  <Typography>"No Service Selected"</Typography>
 
@@ -44,21 +48,21 @@ const Cart = ({history}) => {
                     </div>
                   ):
                         <Fragment>
+                     
                         <div className='cartPage'>
                             <div className='cartHeader'>
                                 <p>Service</p>
                                 <p>Price</p>
                             </div>
             
-            
                             {cartItems && cartItems.map((item)=>
                             (
-            
                                 <div className='cartContainer' key={item.service}>
                                 <CartItemCard item={item} deleteCartItems={deleteCartItems}/>
             
                          
                               <p className='cartSubtotal'>{item.price}</p>
+                          
                             </div>
             
                             ))}
